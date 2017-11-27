@@ -12,14 +12,13 @@ public class CharacterBase : MonoBehaviour
     public NavMeshAgent navAgent;
     public MouseInput playerMI;
 
-    [SerializeField]
-    bool isFratBoy = false;
-    [SerializeField]
-    bool isSororityGirl = false;
-    [SerializeField]
-    bool isCriminalLawyer = false;
-    [SerializeField]
-    bool isBotoxMom = false;
+    public bool isFratBoy = false;
+    public bool isSororityGirl = false;
+    public bool isCriminalLawyer = false;
+    public bool isBotoxMom = false;
+
+    public bool isStunned;
+    public bool alreadyStunned;
 
     [SerializeField]
     public float moveSpeedModifier = 1.0f;
@@ -117,18 +116,38 @@ public class CharacterBase : MonoBehaviour
         if (isFratBoy)
         {
             GetComponent<Abilities_FratBoy>().Tick();
+            HandleStun();
         }
         else if (isSororityGirl)
         {
             GetComponent<Abilities_SororityGirl>().Tick();
+            HandleStun();
         }
         else if (isBotoxMom)
         {
             GetComponent<Abilities_BotoxMom>().Tick();
+            HandleStun();
+
         }
         else if (isCriminalLawyer)
         {
             GetComponent<Abilities_CriminalDefense>().Tick();
+            HandleStun();
+        }
+    }
+
+    public void HandleStun()
+    {
+        if (isStunned && !alreadyStunned)
+        {
+            alreadyStunned = true;
+            moveSpeedModifier *= 0.0f;
+        }
+        else if (isStunned && alreadyStunned)
+        {
+            isStunned = false;
+            alreadyStunned = false;
+            moveSpeedModifier = 1.0f;
         }
     }
 }

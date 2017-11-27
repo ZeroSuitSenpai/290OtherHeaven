@@ -19,7 +19,20 @@ public class GameMaster : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         p2Turn = !p1Turn;
-        GameObject characterToSet = GameObject.Find("Player_SororityGirl");
+        /*
+        GameObject[] p1Array = GameObject.FindGameObjectsWithTag("P1");
+        GameObject[] p2Array = GameObject.FindGameObjectsWithTag("P2");
+        for (int i = 0; i < p1Array.Length; i++)
+        {
+            charactersArray[i] = p1Array[i];
+        }
+
+        for (int j = 0; j < p2Array.Length; j++)
+        {
+            charactersArray[p1Array.Length + j] = p2Array[j];
+        }
+        */
+        GameObject characterToSet = GameObject.Find("Player_CriminalLawyer");
         MU = GameObject.Find("MouseInfoUpdater").GetComponent<MouseInfoUpdater>();
         ChangeCurrentCharacter(characterToSet);
     }
@@ -34,6 +47,12 @@ public class GameMaster : MonoBehaviour {
         currentCharacter = charactersArray[charIndex];
         //Call tick on a character when it's their turn
         CB.TickBase();
+
+        for (int i = 0; i < charactersArray.Length; i++)
+        {
+            charactersArray[i].GetComponent<MouseInput>().enabled = false;
+        }
+        currentCharacter.GetComponent<MouseInput>().enabled = true;
     }
 
 	// Update is called once per frame
@@ -44,11 +63,21 @@ public class GameMaster : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            currentCharacter.GetComponent<Abilities_SororityGirl>().TBT();
+            currentCharacter.GetComponent<Abilities_CriminalDefense>().CrossExamination();
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
-            currentCharacter.GetComponent<Abilities_SororityGirl>().Chauffer();
+            currentCharacter.GetComponent<Abilities_CriminalDefense>().TheDefenseRests();
+        }
+
+        if (CB.isBotoxMom)
+        {
+            CB.moveSpeedModifier = CB.GetComponent<Abilities_BotoxMom>().newYearModifier;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            NewTurn();
         }
     }
 

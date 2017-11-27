@@ -7,8 +7,16 @@ public class Abilities_CriminalDefense : MonoBehaviour {
     public GameObject[] team;
     public GameObject teammate;
 
-	// Use this for initialization
-	void Start () {
+    public GameObject P1CE;
+    public GameObject P2CE;
+    GameObject crossProj;
+
+    public GameObject P1DR;
+    public GameObject P2DR;
+    GameObject defenseProj;
+
+    // Use this for initialization
+    void Start () {
         team = GameObject.FindGameObjectsWithTag(gameObject.tag);
 
         for (int i = 0; i < team.Length; i++)
@@ -26,7 +34,22 @@ public class Abilities_CriminalDefense : MonoBehaviour {
         {
             Debug.Log("No teammates found for criminal defense besides himself.");
         }
-	}
+
+        if (gameObject.tag == "P1")
+        {
+            crossProj = P1CE;
+            defenseProj = P1DR;
+        }
+        else if (gameObject.tag == "P2")
+        {
+            crossProj = P2CE;
+            defenseProj = P2DR;
+        }
+        else
+        {
+            Debug.Log("ERROR:  Unable to determine tag for criminal defense.");
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -34,27 +57,35 @@ public class Abilities_CriminalDefense : MonoBehaviour {
 	}
 
     //Basic attack:  Heals allies and damages enemies in an area
-    void CrossExamination()
+    public void CrossExamination()
     {
-
+        Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 dir = (Input.mousePosition - sp).normalized;
+        Instantiate(crossProj, this.transform.position, Quaternion.identity);
     }
 
+    /*
     //False Witness:  Grants invisibility to all allies and enemies in the area
     void FalseWitness()
     {
 
     }
+    */
 
     //The defense rests:  Stuns target enemy for one turn
-    void TheDefenseRests()
+    public void TheDefenseRests()
     {
-
+        Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 dir = (Input.mousePosition - sp).normalized;
+        Instantiate(defenseProj, this.transform.position + (1.5f * dir), Quaternion.identity);
     }
 
     //Not Guilty:  Revives a dead teammate
-    void NotGuilty()
+    public void NotGuilty()
     {
-
+        Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 dir = (Input.mousePosition - sp).normalized;
+        Instantiate(teammate, this.transform.position + (3.0f * dir), Quaternion.identity);
     }
 
     public void Tick()
