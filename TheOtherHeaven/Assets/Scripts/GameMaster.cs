@@ -46,6 +46,8 @@ public class GameMaster : MonoBehaviour {
             charactersArray[i].GetComponent<MouseInput>().enabled = false;
         }
         currentCharacter.GetComponent<MouseInput>().enabled = true;
+
+        Debug.Log("Current character:  " + currentCharacter.gameObject.name);
     }
 
 	// Update is called once per frame

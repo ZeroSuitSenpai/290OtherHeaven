@@ -15,18 +15,25 @@ public class Abilities_SororityGirl : MonoBehaviour {
 
     public bool usedChauffer;
 
-	// Use this for initialization
-	void Start () {
-        fashionModifier = -0.5f;
+    public Material colorBlue;
+    public Material colorRed;
+
+    // Use this for initialization
+    void Start () {
+        fashionModifier = 0.75f;
         startingPos = gameObject.transform.position;
 
         if (gameObject.tag == "P1")
         {
             callDaddyProj = P1CD;
+            GetComponent<MeshRenderer>().material = colorRed;
+
         }
         else if (gameObject.tag == "P2")
         {
             callDaddyProj = P2CD;
+            GetComponent<MeshRenderer>().material = colorBlue;
+
         }
         else
         {
@@ -46,7 +53,7 @@ public class Abilities_SororityGirl : MonoBehaviour {
         fashionModifier += 0.25f;
     }
 
-    //Chauffer:  For this turn, movement costs for sorority girl are halved
+    //Chauffer:  For this turn, movement costs for sorority girl are halveds
     public void Chauffer()
     {
         pGM.GetComponent<GameMaster>().CB.moveSpeedModifier = 0.5f;

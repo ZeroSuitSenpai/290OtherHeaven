@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54670657293553820}
   - component: {fileID: 195539635648512640}
   - component: {fileID: 114175485782527078}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player_TestDummy
   m_TagString: P2
   m_Icon: {fileID: 0}
@@ -107,7 +107,6 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23924107900155998
 MeshRenderer:
@@ -139,7 +138,6 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33826239123234786
 MeshFilter:
@@ -202,6 +200,10 @@ MonoBehaviour:
   isSororityGirl: 0
   isCriminalLawyer: 0
   isBotoxMom: 0
+  isStunned: 0
+  alreadyStunned: 0
+  moveSpeedModifier: 1
+  enoughAP: 0
 --- !u!136 &136480823501685038
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -222,7 +224,6 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1120175856279704}
   m_Enabled: 1
-  m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8

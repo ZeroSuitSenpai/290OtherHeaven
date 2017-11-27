@@ -16,6 +16,9 @@ public class Abilities_BotoxMom : MonoBehaviour {
     public GameObject P2CA;
     GameObject assassinationProj;
 
+    public Material colorBlue;
+    public Material colorRed;
+
     // Use this for initialization
     void Start () {
         newYearModifier = 0.25f;
@@ -24,11 +27,13 @@ public class Abilities_BotoxMom : MonoBehaviour {
         {
             RBFproj = P1RBF;
             assassinationProj = P1CA;
+            GetComponent<MeshRenderer>().material = colorRed;
         }
         else if (gameObject.tag == "P2")
         {
             RBFproj = P2RBF;
             assassinationProj = P2CA;
+            GetComponent<MeshRenderer>().material = colorBlue;
         }
         else
         {

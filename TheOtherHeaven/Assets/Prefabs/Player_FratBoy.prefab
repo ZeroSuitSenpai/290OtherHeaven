@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 33761386091220994}
   - component: {fileID: 65223227532090202}
   - component: {fileID: 23635980807006428}
+  - component: {fileID: 114242332595574964}
   m_Layer: 0
   m_Name: DrunkHitbox
-  m_TagString: Untagged
+  m_TagString: P1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +41,7 @@ GameObject:
   - component: {fileID: 33624468063058760}
   - component: {fileID: 65753804976733980}
   - component: {fileID: 23308575239992792}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sunglasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,9 +64,9 @@ GameObject:
   - component: {fileID: 114721950011692784}
   - component: {fileID: 114316382572347528}
   - component: {fileID: 114281013755731666}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player_FratBoy
-  m_TagString: Untagged
+  m_TagString: P1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,7 +91,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1153179257979752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.57, y: 1.5, z: -3.11}
+  m_LocalPosition: {x: -11.26, y: 1.5, z: -6.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4976083387318374}
@@ -141,7 +142,6 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23635980807006428
 MeshRenderer:
@@ -173,7 +173,6 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23787875241084264
 MeshRenderer:
@@ -205,7 +204,6 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33624468063058760
 MeshFilter:
@@ -250,7 +248,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1005708709086406}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -267,6 +265,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114242332595574964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1005708709086406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a2d6a09d49a70458a5513fc5566bdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114281013755731666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -281,7 +290,10 @@ MonoBehaviour:
   hasAffluenza: 0
   P1TT: {fileID: 1637634970305672, guid: 1ca72798895972f438e6c41746bebb8a, type: 2}
   P2TT: {fileID: 1637634970305672, guid: 4892caaa4c4930046aecfc91838db1ea, type: 2}
+  DrunkHitbox: {fileID: 0}
   thirstyThursdayProj: {fileID: 0}
+  colorBlue: {fileID: 2100000, guid: f1fbf7befa46b1c49bf4fec210d02a33, type: 2}
+  colorRed: {fileID: 2100000, guid: 8850e554583329e4492812d87bd61c5f, type: 2}
 --- !u!114 &114316382572347528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -296,7 +308,6 @@ MonoBehaviour:
   gameMast: {fileID: 0}
   currentCharacter: {fileID: 0}
   CB: {fileID: 0}
-  moveSpeedModifier: 1
 --- !u!114 &114721950011692784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -317,6 +328,10 @@ MonoBehaviour:
   isSororityGirl: 0
   isCriminalLawyer: 0
   isBotoxMom: 0
+  isStunned: 0
+  alreadyStunned: 0
+  moveSpeedModifier: 1
+  enoughAP: 0
 --- !u!136 &136894970953774516
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -337,11 +352,10 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1153179257979752}
   m_Enabled: 1
-  m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
+  m_Speed: 5
+  m_Acceleration: 16
+  avoidancePriority: 1
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
@@ -350,4 +364,4 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 1
+  m_ObstacleAvoidanceType: 4

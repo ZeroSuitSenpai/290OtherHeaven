@@ -37,6 +37,7 @@ public class Ability_DefenseRests: MonoBehaviour {
         if (other.name.Contains("Player_") && other.tag == enemyTag)
         {
             other.GetComponent<CharacterBase>().isStunned = true;
+            Debug.Log("Defense Rests stunned " + other.gameObject.name);
         }
     }
 }

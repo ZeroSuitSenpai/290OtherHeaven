@@ -37,10 +37,12 @@ public class Ability_CrossExamination : MonoBehaviour {
         if (other.name.Contains("Player_") && other.tag == enemyTag)
         {
             other.GetComponent<CharacterBase>().TakeDamage(15);
+            Debug.Log("Cross Examination dealt 15 damage to " + other.gameObject.name);
         }
         else if (other.name.Contains("Player_"))
         {
             other.GetComponent<CharacterBase>().TakeDamage(-25);
+            Debug.Log("Cross Examination healed 50 " + other.gameObject.name + " for 25 damage");
         }
     }
 }

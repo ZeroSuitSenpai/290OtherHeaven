@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33624866828490536}
   - component: {fileID: 65722980999947450}
   - component: {fileID: 23419359191642734}
+  - component: {fileID: 114661131049379354}
   m_Layer: 0
   m_Name: P1_RBFHitbox
   m_TagString: P1
@@ -72,7 +73,6 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33624866828490536
 MeshFilter:
@@ -93,3 +93,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114661131049379354
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474952704806530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f24f4c6da11d1514fa58f4c27e10ca6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

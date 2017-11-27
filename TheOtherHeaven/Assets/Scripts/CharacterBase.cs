@@ -80,6 +80,7 @@ public class CharacterBase : MonoBehaviour
             enoughAP = false;
             Debug.Log("ERROR:  Not enough AP to complete move");
         }
+        Debug.Log("Current AP:  " + actionPoints);
     }
 
     public void TakeDamage(int amtToTake)
@@ -117,22 +118,26 @@ public class CharacterBase : MonoBehaviour
         {
             GetComponent<Abilities_FratBoy>().Tick();
             HandleStun();
+            TurnStartAPGain();
         }
         else if (isSororityGirl)
         {
             GetComponent<Abilities_SororityGirl>().Tick();
             HandleStun();
+            TurnStartAPGain();
         }
         else if (isBotoxMom)
         {
             GetComponent<Abilities_BotoxMom>().Tick();
             HandleStun();
+            TurnStartAPGain();
 
         }
         else if (isCriminalLawyer)
         {
             GetComponent<Abilities_CriminalDefense>().Tick();
             HandleStun();
+            TurnStartAPGain();
         }
     }
 
@@ -149,5 +154,15 @@ public class CharacterBase : MonoBehaviour
             alreadyStunned = false;
             moveSpeedModifier = 1.0f;
         }
+    }
+
+    public void TurnStartAPGain()
+    {
+        actionPoints += 8;
+        if (actionPoints > 10)
+        {
+            actionPoints = 10;
+        }
+        Debug.Log("Current AP:  " + actionPoints);
     }
 }

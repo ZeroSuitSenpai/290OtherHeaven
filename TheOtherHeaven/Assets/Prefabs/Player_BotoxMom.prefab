@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33918539712651788}
   - component: {fileID: 65319346016559360}
   - component: {fileID: 23679720286975856}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sunglasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 114301236813068356}
   - component: {fileID: 114986045607405754}
   - component: {fileID: 114081803422831320}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player_BotoxMom
   m_TagString: P2
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1668293466546440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.11, y: 1.5, z: -3.11}
+  m_LocalPosition: {x: 3.47, y: 1.5, z: -6.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4286149728523946}
@@ -109,7 +109,6 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23679720286975856
 MeshRenderer:
@@ -141,7 +140,6 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33660302455071692
 MeshFilter:
@@ -202,6 +200,8 @@ MonoBehaviour:
   P2RBF: {fileID: 1474952704806530, guid: 014eee4a4eba17b419cf3e8c70af8197, type: 2}
   P1CA: {fileID: 1388661753552884, guid: 0e2dd843f6d10de4cbf5a01753cde178, type: 2}
   P2CA: {fileID: 1388661753552884, guid: 02ea30d16431966488574770e06d3273, type: 2}
+  colorBlue: {fileID: 2100000, guid: f1fbf7befa46b1c49bf4fec210d02a33, type: 2}
+  colorRed: {fileID: 2100000, guid: 8850e554583329e4492812d87bd61c5f, type: 2}
 --- !u!114 &114301236813068356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,11 +260,10 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1668293466546440}
   m_Enabled: 1
-  m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
+  m_Speed: 5
+  m_Acceleration: 16
+  avoidancePriority: 1
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
@@ -273,4 +272,4 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 1
+  m_ObstacleAvoidanceType: 4

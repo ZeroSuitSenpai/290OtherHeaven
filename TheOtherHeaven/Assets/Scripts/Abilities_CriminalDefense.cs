@@ -15,6 +15,9 @@ public class Abilities_CriminalDefense : MonoBehaviour {
     public GameObject P2DR;
     GameObject defenseProj;
 
+    public Material colorBlue;
+    public Material colorRed;
+
     // Use this for initialization
     void Start () {
         team = GameObject.FindGameObjectsWithTag(gameObject.tag);
@@ -39,11 +42,14 @@ public class Abilities_CriminalDefense : MonoBehaviour {
         {
             crossProj = P1CE;
             defenseProj = P1DR;
+            GetComponent<MeshRenderer>().material = colorRed;
         }
         else if (gameObject.tag == "P2")
         {
             crossProj = P2CE;
             defenseProj = P2DR;
+            GetComponent<MeshRenderer>().material = colorBlue;
+
         }
         else
         {

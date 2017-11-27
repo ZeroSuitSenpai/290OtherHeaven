@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33863730470474120}
   - component: {fileID: 65563823652190488}
   - component: {fileID: 23968566650126510}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sunglasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 114698473580300806}
   - component: {fileID: 114522532680017504}
   - component: {fileID: 114196635597852284}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player_SororityGirl
   m_TagString: P1
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1426006461144972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.623775, y: 1.14, z: 0.55266476}
+  m_LocalPosition: {x: 0.42, y: 1.82, z: 3.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4484683245251730}
@@ -213,6 +213,8 @@ MonoBehaviour:
   P1CD: {fileID: 1192360854714184, guid: 080739b4f9f386946a1788a6f8c94e58, type: 2}
   P2CD: {fileID: 1592646771703538, guid: 7700f5583f2149e43a37ce684c32dacc, type: 2}
   usedChauffer: 0
+  colorBlue: {fileID: 2100000, guid: f1fbf7befa46b1c49bf4fec210d02a33, type: 2}
+  colorRed: {fileID: 2100000, guid: 8850e554583329e4492812d87bd61c5f, type: 2}
 --- !u!114 &114698473580300806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -258,9 +260,9 @@ NavMeshAgent:
   m_GameObject: {fileID: 1426006461144972}
   m_Enabled: 1
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
+  m_Speed: 5
+  m_Acceleration: 16
+  avoidancePriority: 1
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
@@ -269,4 +271,4 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 1
+  m_ObstacleAvoidanceType: 4

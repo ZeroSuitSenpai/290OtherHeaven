@@ -12,17 +12,23 @@ public class Abilities_FratBoy : MonoBehaviour {
 
     public GameObject thirstyThursdayProj;
 
-	// Use this for initialization
-	void Start ()
+    public Material colorBlue;
+    public Material colorRed;
+
+    // Use this for initialization
+    void Start ()
     {
         hasAffluenza = false;
         if (gameObject.tag == "P1")
         {
             thirstyThursdayProj = P1TT;
+            GetComponent<MeshRenderer>().material = colorRed;
+
         }
         else if (gameObject.tag == "P2")
         {
             thirstyThursdayProj = P2TT;
+            GetComponent<MeshRenderer>().material = colorBlue;
         }
         else
         {
