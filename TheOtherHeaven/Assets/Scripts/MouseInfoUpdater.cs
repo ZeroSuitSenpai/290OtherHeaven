@@ -117,7 +117,7 @@ public class MouseInfoUpdater : MonoBehaviour
         }
         for (int i = 0; i < path.corners.Length; i++)
         {
-            line.SetPosition(i, path.corners[i]);
+            line.SetPosition(i, path.corners[i] + new Vector3(0.0f, 0.5f, 0.0f));
         }
     }
 
