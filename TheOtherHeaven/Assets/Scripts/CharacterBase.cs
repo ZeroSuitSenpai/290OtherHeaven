@@ -92,6 +92,7 @@ public class CharacterBase : MonoBehaviour
             {
                 isAlive = false;
                 Debug.Log(this.gameObject.name + "died!");
+                gameObject.GetComponent<MeshRenderer>().enabled = false;
             }
         }
         else
@@ -103,6 +104,7 @@ public class CharacterBase : MonoBehaviour
                 {
                     isAlive = false;
                     Debug.Log(this.gameObject.name + "died!");
+                    gameObject.GetComponent<MeshRenderer>().enabled = false;
                 }
             }
             else

@@ -32,6 +32,18 @@ public class GameMaster : MonoBehaviour {
 
     void NewTurn()
     {
+        for (int i = 0; i < cList.Count; i++)
+        {
+            cList[i].GetComponent<MouseInput>().enabled = false;
+
+            if (!cList[i].GetComponent<CharacterBase>().isAlive)
+            {
+                Destroy(cList[i]);
+                cList.Remove(cList[i]);
+                livingCharacters -= 1;
+            }
+
+        }
         if (CB.isFratBoy)
         {
             CB.GetComponent<Abilities_FratBoy>().DrunkHitbox.SetActive(false);
@@ -45,19 +57,6 @@ public class GameMaster : MonoBehaviour {
         ChangeCurrentCharacter(cList[charIndex]);
         //Call tick on a character when it's their turn
         CB.TickBase();
-
-        for (int i = 0; i < cList.Count; i++)
-        {
-            cList[i].GetComponent<MouseInput>().enabled = false;
-            
-            if (!cList[i].GetComponent<CharacterBase>().isAlive)
-            {
-                Destroy(cList[i]);
-                cList.Remove(cList[i]);
-                livingCharacters -= 1;
-            }
-            
-        }
         currentCharacter.GetComponent<MouseInput>().enabled = true;
 
         Debug.Log("Current character:  " + currentCharacter.gameObject.name);
