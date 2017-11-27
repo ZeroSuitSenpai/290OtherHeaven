@@ -44,6 +44,7 @@ public class GameMaster : MonoBehaviour {
             }
 
         }
+        //Done before the character swap
         if (CB.isFratBoy)
         {
             CB.GetComponent<Abilities_FratBoy>().DrunkHitbox.SetActive(false);
@@ -54,6 +55,7 @@ public class GameMaster : MonoBehaviour {
         {
             charIndex = 0;
         }
+
         ChangeCurrentCharacter(cList[charIndex]);
         //Call tick on a character when it's their turn
         CB.TickBase();
@@ -61,6 +63,20 @@ public class GameMaster : MonoBehaviour {
 
         Debug.Log("Current character:  " + currentCharacter.gameObject.name);
         MU.ResetPosition();
+
+        if (!CB.isAlive)
+        {
+            for (int i = 0; i < cList.Count; i++)
+            {
+                if (cList[i] == CB.gameObject)
+                {
+                    Destroy(cList[i]);
+                    cList.Remove(cList[i]);
+                    livingCharacters -= 1;
+                }
+            }
+            NewTurn();
+        }
     }
 
 	// Update is called once per frame

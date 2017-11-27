@@ -33,10 +33,21 @@ public class MouseInput : MonoBehaviour
             {
                 if (GM.MU.validMove)
                 {
-                    CB.SpendAP(Mathf.RoundToInt(GM.MU.lengthSoFar * GM.CB.moveSpeedModifier));
-                    if (CB.enoughAP)
+                    if (CB.isBotoxMom)
                     {
-                        CB.navAgent.destination = hit.point;
+                        CB.SpendAP(Mathf.RoundToInt(GM.MU.lengthSoFar * GM.CB.moveSpeedModifier * GM.currentCharacter.GetComponent<Abilities_BotoxMom>().newYearModifier));
+                        if (CB.enoughAP)
+                        {
+                            CB.navAgent.destination = hit.point;
+                        }
+                    }
+                    else
+                    {
+                        CB.SpendAP(Mathf.RoundToInt(GM.MU.lengthSoFar * GM.CB.moveSpeedModifier));
+                        if (CB.enoughAP)
+                        {
+                            CB.navAgent.destination = hit.point;
+                        }
                     }
                 }
             }

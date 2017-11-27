@@ -148,7 +148,7 @@ public class CharacterBase : MonoBehaviour
         if (isStunned && !alreadyStunned)
         {
             alreadyStunned = true;
-            moveSpeedModifier *= 0.0f;
+            moveSpeedModifier *= 999.0f;
         }
         else if (isStunned && alreadyStunned)
         {
