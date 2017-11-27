@@ -119,7 +119,6 @@ public class MouseInfoUpdater : MonoBehaviour
         {
             line.SetPosition(i, path.corners[i]);
         }
-
     }
 
     public void ResetPosition()

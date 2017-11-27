@@ -130,14 +130,29 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 114196635597852284, guid: 2a266fb028e842741bc60fb0b49a8381,
+    - target: {fileID: 114595208537268316, guid: 2a266fb028e842741bc60fb0b49a8381,
         type: 2}
-      propertyPath: gameMast
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114595208537268316, guid: 2a266fb028e842741bc60fb0b49a8381,
+        type: 2}
+      propertyPath: gMast
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114884754755001624, guid: 2a266fb028e842741bc60fb0b49a8381,
+        type: 2}
+      propertyPath: mainCam
       value: 
       objectReference: {fileID: 1770756836}
     - target: {fileID: 114522532680017504, guid: 2a266fb028e842741bc60fb0b49a8381,
         type: 2}
       propertyPath: pGM
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114196635597852284, guid: 2a266fb028e842741bc60fb0b49a8381,
+        type: 2}
+      propertyPath: gameMast
       value: 
       objectReference: {fileID: 1770756836}
     m_RemovedComponents: []
@@ -428,14 +443,29 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114986045607405754, guid: 288595b51af3adb4fada037e96bedc33,
+    - target: {fileID: 114621672865778362, guid: 288595b51af3adb4fada037e96bedc33,
         type: 2}
-      propertyPath: gameMast
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114621672865778362, guid: 288595b51af3adb4fada037e96bedc33,
+        type: 2}
+      propertyPath: gMast
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114512842758853200, guid: 288595b51af3adb4fada037e96bedc33,
+        type: 2}
+      propertyPath: mainCam
       value: 
       objectReference: {fileID: 1770756836}
     - target: {fileID: 114081803422831320, guid: 288595b51af3adb4fada037e96bedc33,
         type: 2}
       propertyPath: pGM
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114986045607405754, guid: 288595b51af3adb4fada037e96bedc33,
+        type: 2}
+      propertyPath: gameMast
       value: 
       objectReference: {fileID: 1770756836}
     m_RemovedComponents: []
@@ -654,7 +684,7 @@ LineRenderer:
   m_GameObject: {fileID: 1435075371}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -680,7 +710,7 @@ LineRenderer:
   m_Positions: []
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 1
+    widthMultiplier: 0.25
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -1027,6 +1057,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114931056899961240, guid: e4627c8bce6517e42a538ba8f16cc006,
+        type: 2}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114931056899961240, guid: e4627c8bce6517e42a538ba8f16cc006,
+        type: 2}
+      propertyPath: gMast
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114266378053212222, guid: e4627c8bce6517e42a538ba8f16cc006,
+        type: 2}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1770756836}
     - target: {fileID: 114828412474458068, guid: e4627c8bce6517e42a538ba8f16cc006,
         type: 2}
       propertyPath: gameMast
@@ -1328,6 +1373,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114943644273771970, guid: 1e0f2df3d844c0441b3ae6250bc6652d,
+        type: 2}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114943644273771970, guid: 1e0f2df3d844c0441b3ae6250bc6652d,
+        type: 2}
+      propertyPath: gMast
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114103656054159472, guid: 1e0f2df3d844c0441b3ae6250bc6652d,
+        type: 2}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1770756836}
     - target: {fileID: 114316382572347528, guid: 1e0f2df3d844c0441b3ae6250bc6652d,
         type: 2}
       propertyPath: gameMast

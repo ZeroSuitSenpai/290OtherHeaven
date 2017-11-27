@@ -35,7 +35,7 @@ public class GameMaster : MonoBehaviour {
         for (int i = 0; i < cList.Count; i++)
         {
             cList[i].GetComponent<MouseInput>().enabled = false;
-
+            cList[i].GetComponentInChildren<APtext>().isDisplayed = false;
             if (!cList[i].GetComponent<CharacterBase>().isAlive)
             {
                 Destroy(cList[i]);
@@ -60,6 +60,7 @@ public class GameMaster : MonoBehaviour {
         //Call tick on a character when it's their turn
         CB.TickBase();
         currentCharacter.GetComponent<MouseInput>().enabled = true;
+        currentCharacter.GetComponentInChildren<APtext>().isDisplayed = true;
 
         Debug.Log("Current character:  " + currentCharacter.gameObject.name);
         MU.ResetPosition();
