@@ -56,4 +56,9 @@ public class Abilities_CriminalDefense : MonoBehaviour {
     {
 
     }
+
+    public void Tick()
+    {
+
+    }
 }

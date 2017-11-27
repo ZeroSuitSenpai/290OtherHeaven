@@ -24,6 +24,8 @@ public class CharacterBase : MonoBehaviour
     [SerializeField]
     public float moveSpeedModifier = 1.0f;
 
+    public bool enoughAP;
+
 
     // Use this for initialization
     void Start ()
@@ -70,8 +72,14 @@ public class CharacterBase : MonoBehaviour
     {
         if (actionPoints - amtToSpend >= 0)
         {
-            Debug.Log("Amount to spend: " + amtToSpend);
+            enoughAP = true;
+            Debug.Log("SpentAP: " + amtToSpend);
             actionPoints = actionPoints - amtToSpend;
+        }
+        else
+        {
+            enoughAP = false;
+            Debug.Log("ERROR:  Not enough AP to complete move");
         }
     }
 
@@ -101,6 +109,26 @@ public class CharacterBase : MonoBehaviour
             {
                 Debug.Log("Damage to Frat Boy prevented by affluenza");
             }
+        }
+    }
+
+    public void TickBase()
+    {
+        if (isFratBoy)
+        {
+            GetComponent<Abilities_FratBoy>().Tick();
+        }
+        else if (isSororityGirl)
+        {
+            GetComponent<Abilities_SororityGirl>().Tick();
+        }
+        else if (isBotoxMom)
+        {
+            GetComponent<Abilities_BotoxMom>().Tick();
+        }
+        else if (isCriminalLawyer)
+        {
+            GetComponent<Abilities_CriminalDefense>().Tick();
         }
     }
 }

@@ -34,13 +34,13 @@ public class Abilities_FratBoy : MonoBehaviour {
 	}
 
     //Drunk AF DGAF:  Movement doubles as an attack
-    void DrunkAFDGAF()
+    public void DrunkAFDGAF()
     {
         //Implemented in a separate script:  Ability_DrunkAFDGAF.cs
     }
 
     //Affluenza Defense:  Frat boy becomes immune to all damage for a turn, but cannot do anything.
-    void AffluenzaDefense()
+    public void AffluenzaDefense()
     {
         hasAffluenza = true;
     }
@@ -49,5 +49,13 @@ public class Abilities_FratBoy : MonoBehaviour {
     public void ThirstyThursday()
     {
         Instantiate(thirstyThursdayProj, this.transform.position, Quaternion.identity);
+    }
+
+    public void Tick()
+    {
+        if (hasAffluenza)
+        {
+           hasAffluenza = false;
+        }
     }
 }

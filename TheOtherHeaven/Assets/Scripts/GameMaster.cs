@@ -19,12 +19,12 @@ public class GameMaster : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         p2Turn = !p1Turn;
-        GameObject characterToSet = GameObject.Find("Player_FratBoy");
+        GameObject characterToSet = GameObject.Find("Player_SororityGirl");
         MU = GameObject.Find("MouseInfoUpdater").GetComponent<MouseInfoUpdater>();
         ChangeCurrentCharacter(characterToSet);
-	}
-	
-    void TakeTurn()
+    }
+
+    void NewTurn()
     {
         charIndex += 1;
         if (charIndex >= 4)
@@ -32,6 +32,8 @@ public class GameMaster : MonoBehaviour {
             charIndex = 0;
         }
         currentCharacter = charactersArray[charIndex];
+        //Call tick on a character when it's their turn
+        CB.TickBase();
     }
 
 	// Update is called once per frame
@@ -39,6 +41,14 @@ public class GameMaster : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.W))
         {
             currentCharacter.GetComponent<Abilities_FratBoy>().ThirstyThursday();
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            currentCharacter.GetComponent<Abilities_SororityGirl>().TBT();
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            currentCharacter.GetComponent<Abilities_SororityGirl>().Chauffer();
         }
     }
 
@@ -50,24 +60,5 @@ public class GameMaster : MonoBehaviour {
         CB = currentCharacter.GetComponent<CharacterBase>();
         MI.CB = currentCharacter.GetComponent<CharacterBase>();
         MU.transform.position = currentCharacter.transform.position;
-
-        //If it's a new turn, and the frat boy already has affluenza, then he activated it last turn so switch it off.
-        if (currentCharacter.GetComponent<Abilities_FratBoy>())
-        {
-            if (currentCharacter.GetComponent<Abilities_FratBoy>().hasAffluenza)
-            {
-                currentCharacter.GetComponent<Abilities_FratBoy>().hasAffluenza = false;
-            }
-        }
-
-        if (currentCharacter.GetComponent<Abilities_SororityGirl>())
-        {
-            currentCharacter.GetComponent<Abilities_SororityGirl>().fashionModifier += 0.5f;
-        }
-
-        if (currentCharacter.GetComponent<Abilities_BotoxMom>())
-        {
-            currentCharacter.GetComponent<Abilities_BotoxMom>().newYearModifier += 0.25f;
-        }
     }
 }

@@ -17,27 +17,32 @@ public class Abilities_BotoxMom : MonoBehaviour {
 	}
 
     //New Year New Me:  Passive, Botox Mom moves twice as fast as other characters, decreasing by 50% for each turn
-    void NewYearNewMe()
+    public void NewYearNewMe()
     {
         //Implemented in mouse info updater
     }
 
     //Young Again:  Botox mom refreshes her passive (new year new me)
-    void YoungAgain()
+    public void YoungAgain()
     {
         newYearModifier = 0.25f;
     }
 
 
     //RBF:  A long-ranged line nuke
-    void RestingBitchFace()
+    public void RestingBitchFace()
     {
 
     }
 
     //Character Assassination:  Botox mom targets an enemy anywhere on the map and deals damage to them
-    void CharacterAssassination()
+    public void CharacterAssassination()
     {
 
+    }
+
+    public void Tick()
+    {
+        newYearModifier += 0.25f;
     }
 }

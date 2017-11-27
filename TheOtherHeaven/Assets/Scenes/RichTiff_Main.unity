@@ -864,6 +864,11 @@ Prefab:
       propertyPath: moveSpeedModifier
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114316382572347528, guid: 1e0f2df3d844c0441b3ae6250bc6652d,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e0f2df3d844c0441b3ae6250bc6652d, type: 2}
   m_IsPrefabParent: 0
@@ -876,7 +881,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4991111869926708, guid: 288595b51af3adb4fada037e96bedc33, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -12.57
+      value: -8.11
       objectReference: {fileID: 0}
     - target: {fileID: 4991111869926708, guid: 288595b51af3adb4fada037e96bedc33, type: 2}
       propertyPath: m_LocalPosition.y
@@ -916,6 +921,18 @@ Prefab:
       propertyPath: pGM
       value: 
       objectReference: {fileID: 1770756836}
+    - target: {fileID: 114478291361410680, guid: 288595b51af3adb4fada037e96bedc33,
+        type: 2}
+      propertyPath: P1CD
+      value: 
+      objectReference: {fileID: 1192360854714184, guid: 080739b4f9f386946a1788a6f8c94e58,
+        type: 2}
+    - target: {fileID: 114478291361410680, guid: 288595b51af3adb4fada037e96bedc33,
+        type: 2}
+      propertyPath: P2CD
+      value: 
+      objectReference: {fileID: 1592646771703538, guid: 7700f5583f2149e43a37ce684c32dacc,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 288595b51af3adb4fada037e96bedc33, type: 2}
   m_IsPrefabParent: 0

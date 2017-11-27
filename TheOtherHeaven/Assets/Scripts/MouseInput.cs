@@ -33,8 +33,11 @@ public class MouseInput : MonoBehaviour
             {
                 if (GM.MU.validMove)
                 {
-                    CB.navAgent.destination = hit.point;
-                    CB.SpendAP(Mathf.RoundToInt(GM.MU.lengthSoFar));
+                    CB.SpendAP(Mathf.RoundToInt(GM.MU.lengthSoFar * GM.CB.moveSpeedModifier));
+                    if (CB.enoughAP)
+                    {
+                        CB.navAgent.destination = hit.point;
+                    }
                 }
             }
         }
