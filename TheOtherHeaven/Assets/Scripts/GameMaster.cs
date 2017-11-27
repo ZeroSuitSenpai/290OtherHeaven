@@ -19,32 +19,25 @@ public class GameMaster : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         p2Turn = !p1Turn;
-        /*
-        GameObject[] p1Array = GameObject.FindGameObjectsWithTag("P1");
-        GameObject[] p2Array = GameObject.FindGameObjectsWithTag("P2");
-        for (int i = 0; i < p1Array.Length; i++)
-        {
-            charactersArray[i] = p1Array[i];
-        }
-
-        for (int j = 0; j < p2Array.Length; j++)
-        {
-            charactersArray[p1Array.Length + j] = p2Array[j];
-        }
-        */
         GameObject characterToSet = GameObject.Find("Player_CriminalLawyer");
         MU = GameObject.Find("MouseInfoUpdater").GetComponent<MouseInfoUpdater>();
         ChangeCurrentCharacter(characterToSet);
+        NewTurn();
     }
 
     void NewTurn()
     {
+        if (CB.isFratBoy)
+        {
+            CB.GetComponent<Abilities_FratBoy>().DrunkHitbox.SetActive(false);
+        }
+
         charIndex += 1;
         if (charIndex >= 4)
         {
             charIndex = 0;
         }
-        currentCharacter = charactersArray[charIndex];
+        ChangeCurrentCharacter(charactersArray[charIndex]);
         //Call tick on a character when it's their turn
         CB.TickBase();
 
@@ -56,18 +49,105 @@ public class GameMaster : MonoBehaviour {
     }
 
 	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.W))
+	void Update ()
+    {
+        TestInputs();
+    }
+
+    void ChangeCurrentCharacter(GameObject newCurrentCharacter)
+    {
+        currentCharacter = newCurrentCharacter;
+        MI = currentCharacter.GetComponent<MouseInput>();
+        MI.currentCharacter = newCurrentCharacter;
+        CB = currentCharacter.GetComponent<CharacterBase>();
+        MI.CB = currentCharacter.GetComponent<CharacterBase>();
+        MU.transform.position = currentCharacter.transform.position;
+    }
+
+    void TestInputs()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            currentCharacter.GetComponent<Abilities_FratBoy>().ThirstyThursday();
+            if (CB.isBotoxMom)
+            {
+                CB.GetComponent<Abilities_BotoxMom>().RestingBitchFace();
+                Debug.Log("Botox Mom casts Resting Bitch Face");
+            }
+            else if (CB.isCriminalLawyer)
+            {
+                CB.GetComponent<Abilities_CriminalDefense>().CrossExamination();
+                Debug.Log("Criminial Lawyer casts Cross Examination");
+            }
+            else if (CB.isSororityGirl)
+            {
+                CB.GetComponent<Abilities_SororityGirl>().CallDaddy();
+                Debug.Log("Sorority Girl casts Call Daddy0");
+
+            }
+            else if (CB.isFratBoy)
+            {
+                CB.GetComponent<Abilities_FratBoy>().AffluenzaDefense();
+                Debug.Log("Frat Bot casts Affluenza");
+            }
+            else
+            {
+                Debug.Log("ERROR:  Something is wrong with CB being set.");
+            }
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.X))
         {
-            currentCharacter.GetComponent<Abilities_CriminalDefense>().CrossExamination();
+            if (CB.isBotoxMom)
+            {
+                CB.GetComponent<Abilities_BotoxMom>().YoungAgain();
+                Debug.Log("Botox Mom casts Young Again");
+            }
+            else if (CB.isCriminalLawyer)
+            {
+                CB.GetComponent<Abilities_CriminalDefense>().TheDefenseRests();
+                Debug.Log("Criminial Lawyer casts Defense Rests");
+            }
+            else if (CB.isSororityGirl)
+            {
+                CB.GetComponent<Abilities_SororityGirl>().Chauffer();
+                Debug.Log("Sorority Girl casts Chauffer");
+
+            }
+            else if (CB.isFratBoy)
+            {
+                CB.GetComponent<Abilities_FratBoy>().ThirstyThursday();
+                Debug.Log("Frat Boy cast Thirsty Thursday");
+            }
+            else
+            {
+                Debug.Log("ERROR:  Something is wrong with CB being set.");
+            }
         }
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            currentCharacter.GetComponent<Abilities_CriminalDefense>().TheDefenseRests();
+            if (CB.isBotoxMom)
+            {
+                CB.GetComponent<Abilities_BotoxMom>().CharacterAssassination();
+                Debug.Log("Botox Mom casts Character Assassination");
+
+            }
+            else if (CB.isCriminalLawyer)
+            {
+                CB.GetComponent<Abilities_CriminalDefense>().NotGuilty();
+                Debug.Log("Criminial Lawyer casts Not Guilty");
+            }
+            else if (CB.isSororityGirl)
+            {
+                CB.GetComponent<Abilities_SororityGirl>().TBT();
+                Debug.Log("Sorority Girl casts TBT");
+            }
+            else if (CB.isFratBoy)
+            {
+                Debug.Log("No ability bound to C for Frat Boy");
+            }
+            else
+            {
+                Debug.Log("ERROR:  Something is wrong with CB being set.");
+            }
         }
 
         if (CB.isBotoxMom)
@@ -79,15 +159,5 @@ public class GameMaster : MonoBehaviour {
         {
             NewTurn();
         }
-    }
-
-    void ChangeCurrentCharacter(GameObject newCurrentCharacter)
-    {
-        currentCharacter = newCurrentCharacter;
-        MI = currentCharacter.GetComponent<MouseInput>();
-        MI.currentCharacter = newCurrentCharacter;
-        CB = currentCharacter.GetComponent<CharacterBase>();
-        MI.CB = currentCharacter.GetComponent<CharacterBase>();
-        MU.transform.position = currentCharacter.transform.position;
     }
 }

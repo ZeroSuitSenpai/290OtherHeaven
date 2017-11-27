@@ -8,6 +8,8 @@ public class Abilities_FratBoy : MonoBehaviour {
     public GameObject P1TT;
     public GameObject P2TT;
 
+    public GameObject DrunkHitbox;
+
     public GameObject thirstyThursdayProj;
 
 	// Use this for initialization
@@ -26,6 +28,8 @@ public class Abilities_FratBoy : MonoBehaviour {
         {
             Debug.Log("ERROR:  Unable to determine tag for frat boy.");
         }
+        DrunkHitbox = gameObject.transform.FindChild("DrunkHitbox").gameObject;
+        DrunkHitbox.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -57,5 +61,6 @@ public class Abilities_FratBoy : MonoBehaviour {
         {
            hasAffluenza = false;
         }
+        DrunkHitbox.SetActive(true);
     }
 }

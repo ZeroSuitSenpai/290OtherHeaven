@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 114196635597852284}
   m_Layer: 0
   m_Name: Player_SororityGirl
-  m_TagString: P2
+  m_TagString: P1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,6 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23968566650126510
 MeshRenderer:
@@ -141,7 +140,6 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33358840239934400
 MeshFilter:
@@ -235,6 +233,8 @@ MonoBehaviour:
   isSororityGirl: 0
   isCriminalLawyer: 0
   isBotoxMom: 0
+  isStunned: 0
+  alreadyStunned: 0
   moveSpeedModifier: 1
   enoughAP: 0
 --- !u!136 &136413391847585906
@@ -257,7 +257,6 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1426006461144972}
   m_Enabled: 1
-  m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8

@@ -40,7 +40,7 @@ public class MouseInfoUpdater : MonoBehaviour
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
         {
             mouseInfoAgent.destination = hit.point;
-            mouseInfoAgent.isStopped = true;
+            mouseInfoAgent.Stop();
 
             NavMeshPath path = mouseInfoAgent.path;
 
