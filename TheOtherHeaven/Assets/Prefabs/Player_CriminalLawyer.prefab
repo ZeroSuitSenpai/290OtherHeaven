@@ -195,6 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: []
   teammate: {fileID: 0}
+  pGM: {fileID: 0}
   P1CE: {fileID: 1380048622726436, guid: d5304fe9b787c774585cc4dc6f4c8120, type: 2}
   P2CE: {fileID: 1380048622726436, guid: 9440e2bfea6faf9428c9c7d0b4278ab8, type: 2}
   P1DR: {fileID: 1825626383393264, guid: d024cc5b6071e38409cbd0246d875c27, type: 2}
@@ -259,10 +260,10 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1086612065626194}
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.00001
   m_Speed: 5
   m_Acceleration: 16
-  avoidancePriority: 1
+  avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1

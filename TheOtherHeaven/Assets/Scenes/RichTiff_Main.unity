@@ -130,14 +130,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 114522532680017504, guid: 2a266fb028e842741bc60fb0b49a8381,
-        type: 2}
-      propertyPath: pGM
-      value: 
-      objectReference: {fileID: 1770756836}
     - target: {fileID: 114196635597852284, guid: 2a266fb028e842741bc60fb0b49a8381,
         type: 2}
       propertyPath: gameMast
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114522532680017504, guid: 2a266fb028e842741bc60fb0b49a8381,
+        type: 2}
+      propertyPath: pGM
       value: 
       objectReference: {fileID: 1770756836}
     m_RemovedComponents: []
@@ -383,14 +383,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 114081803422831320, guid: 288595b51af3adb4fada037e96bedc33,
-        type: 2}
-      propertyPath: pGM
-      value: 
-      objectReference: {fileID: 1770756836}
     - target: {fileID: 114986045607405754, guid: 288595b51af3adb4fada037e96bedc33,
         type: 2}
       propertyPath: gameMast
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114081803422831320, guid: 288595b51af3adb4fada037e96bedc33,
+        type: 2}
+      propertyPath: pGM
       value: 
       objectReference: {fileID: 1770756836}
     m_RemovedComponents: []
@@ -987,16 +987,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charIndex: 0
-  charactersArray:
-  - {fileID: 822282621}
+  cList:
   - {fileID: 501482116}
-  - {fileID: 21285185}
   - {fileID: 1276113901}
+  - {fileID: 21285185}
+  - {fileID: 822282621}
   currentCharacter: {fileID: 0}
   CB: {fileID: 0}
   mouseInfo: {fileID: 1435075371}
   MU: {fileID: 0}
   MI: {fileID: 0}
+  livingCharacters: 0
 --- !u!1001 &2074659436
 Prefab:
   m_ObjectHideFlags: 0

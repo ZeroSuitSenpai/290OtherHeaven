@@ -22,6 +22,7 @@ public class Ability_CallDaddy : MonoBehaviour {
         {
             Debug.Log("ERROR: Unable to set enemy tag for DrunkAFDGAF");
         }
+        owner = GameObject.Find("Main Camera");
 	}
 	
 	// Update is called once per frame
@@ -37,9 +38,9 @@ public class Ability_CallDaddy : MonoBehaviour {
     {
         if (other.name.Contains("Player_") && other.tag == enemyTag)
         {
-            other.GetComponent<CharacterBase>().TakeDamage(Mathf.RoundToInt(35 * owner.GetComponent<Abilities_SororityGirl>().fashionModifier));
+            other.GetComponent<CharacterBase>().TakeDamage(Mathf.RoundToInt(35 * owner.GetComponent<GameMaster>().currentCharacter.GetComponent<Abilities_SororityGirl>().fashionModifier));
             other.GetComponent<CharacterBase>().moveSpeedModifier = 1.5f;
-            Debug.Log("CallDaddy dealt " + Mathf.RoundToInt(35 * owner.GetComponent<Abilities_SororityGirl>().fashionModifier) +  " damage to " + other.gameObject.name);
+            Debug.Log("CallDaddy dealt " + Mathf.RoundToInt(35 * owner.GetComponent<GameMaster>().currentCharacter.GetComponent<Abilities_SororityGirl>().fashionModifier) +  " damage to " + other.gameObject.name);
         }
     }
 

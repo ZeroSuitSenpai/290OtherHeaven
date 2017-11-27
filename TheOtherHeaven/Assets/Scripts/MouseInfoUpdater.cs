@@ -121,5 +121,10 @@ public class MouseInfoUpdater : MonoBehaviour
         }
 
     }
+
+    public void ResetPosition()
+    {
+        gameObject.transform.position = currentCharacter.transform.position;
+    }
 }
 

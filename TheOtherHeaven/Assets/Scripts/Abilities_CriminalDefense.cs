@@ -6,6 +6,7 @@ public class Abilities_CriminalDefense : MonoBehaviour {
 
     public GameObject[] team;
     public GameObject teammate;
+    public GameObject pGM;
 
     public GameObject P1CE;
     public GameObject P2CE;
@@ -92,6 +93,7 @@ public class Abilities_CriminalDefense : MonoBehaviour {
         Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
         Vector3 dir = (Input.mousePosition - sp).normalized;
         Instantiate(teammate, this.transform.position + (3.0f * dir), Quaternion.identity);
+        pGM.GetComponent<GameMaster>().cList.Add(teammate);
     }
 
     public void Tick()

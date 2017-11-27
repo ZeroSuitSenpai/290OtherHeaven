@@ -8,7 +8,7 @@ public class GameMaster : MonoBehaviour {
     bool p2Turn;
 
     public int charIndex;
-    public GameObject[] charactersArray;
+    public List <GameObject> cList;
     public GameObject currentCharacter;
     public CharacterBase CB;
 
@@ -16,8 +16,13 @@ public class GameMaster : MonoBehaviour {
     public MouseInfoUpdater MU;
     public MouseInput MI;
 
+    [SerializeField]
+    int livingCharacters;
+
 	// Use this for initialization
 	void Start () {
+        charIndex = 0;
+        livingCharacters = 4;
         p2Turn = !p1Turn;
         GameObject characterToSet = GameObject.Find("Player_CriminalLawyer");
         MU = GameObject.Find("MouseInfoUpdater").GetComponent<MouseInfoUpdater>();
@@ -33,21 +38,30 @@ public class GameMaster : MonoBehaviour {
         }
 
         charIndex += 1;
-        if (charIndex >= 4)
+        if (charIndex >= livingCharacters)
         {
             charIndex = 0;
         }
-        ChangeCurrentCharacter(charactersArray[charIndex]);
+        ChangeCurrentCharacter(cList[charIndex]);
         //Call tick on a character when it's their turn
         CB.TickBase();
 
-        for (int i = 0; i < charactersArray.Length; i++)
+        for (int i = 0; i < cList.Count; i++)
         {
-            charactersArray[i].GetComponent<MouseInput>().enabled = false;
+            cList[i].GetComponent<MouseInput>().enabled = false;
+            
+            if (!cList[i].GetComponent<CharacterBase>().isAlive)
+            {
+                Destroy(cList[i]);
+                cList.Remove(cList[i]);
+                livingCharacters -= 1;
+            }
+            
         }
         currentCharacter.GetComponent<MouseInput>().enabled = true;
 
         Debug.Log("Current character:  " + currentCharacter.gameObject.name);
+        MU.ResetPosition();
     }
 
 	// Update is called once per frame
