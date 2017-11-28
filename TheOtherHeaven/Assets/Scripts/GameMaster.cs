@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class GameMaster : MonoBehaviour {
+public class GameMaster : MonoBehaviour
+{
 
     bool p1Turn;
     bool p2Turn;
 
     public int charIndex;
-    public List <GameObject> cList;
+    public List<GameObject> cList;
     public GameObject currentCharacter;
     public CharacterBase CB;
 
@@ -21,8 +23,31 @@ public class GameMaster : MonoBehaviour {
     [SerializeField]
     int livingCharacters;
 
-	// Use this for initialization
-	void Start () {
+    public GameObject fratButtons;
+    public Button b_Drunk;
+    public Button b_Thirsty;
+    public Button b_Affluenza;
+
+    public GameObject sororityButtons;
+    public Button b_CallDaddy;
+    public Button b_Chauffer;
+    public Button b_TBT;
+
+    public GameObject botoxButtons;
+    public Button b_Young;
+    public Button b_RBF;
+    public Button b_Assassinate;
+
+    public GameObject lawyerButtons;
+    public Button b_Cross;
+    public Button b_DefenseRests;
+
+    public Button b_MoveButton;
+
+
+    // Use this for initialization
+    void Start()
+    {
         CL = GetComponent<CombatLog>();
         charIndex = 0;
         livingCharacters = 4;
@@ -85,8 +110,8 @@ public class GameMaster : MonoBehaviour {
         }
     }
 
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update()
     {
         TestInputs();
     }
@@ -99,6 +124,95 @@ public class GameMaster : MonoBehaviour {
         CB = currentCharacter.GetComponent<CharacterBase>();
         MI.CB = currentCharacter.GetComponent<CharacterBase>();
         MU.transform.position = currentCharacter.transform.position;
+
+        if (CB.isFratBoy)
+        {
+            b_Drunk.enabled = true;
+            b_Thirsty.enabled = true;
+            b_Affluenza.enabled = true;
+
+            b_CallDaddy.enabled = false;
+            b_Chauffer.enabled = false;
+            b_TBT.enabled = false;
+
+            b_Young.enabled = false;
+            b_RBF.enabled = false;
+            b_Assassinate.enabled = false;
+
+            b_Cross.enabled = false;
+            b_DefenseRests.enabled = false;
+
+            fratButtons.SetActive(true);
+            sororityButtons.SetActive(false);
+            botoxButtons.SetActive(false);
+            lawyerButtons.SetActive(false);
+        }
+        else if (CB.isBotoxMom)
+        {
+            b_Drunk.enabled = false;
+            b_Thirsty.enabled = false;
+            b_Affluenza.enabled = false;
+
+            b_CallDaddy.enabled = false;
+            b_Chauffer.enabled = false;
+            b_TBT.enabled = false;
+
+            b_Young.enabled = true;
+            b_RBF.enabled = true;
+            b_Assassinate.enabled = true;
+
+            b_Cross.enabled = false;
+            b_DefenseRests.enabled = false;
+
+            fratButtons.SetActive(false);
+            sororityButtons.SetActive(false);
+            botoxButtons.SetActive(true);
+            lawyerButtons.SetActive(false);
+        }
+        else if (CB.isCriminalLawyer)
+        {
+            b_Drunk.enabled = false;
+            b_Thirsty.enabled = false;
+            b_Affluenza.enabled = false;
+
+            b_CallDaddy.enabled = false;
+            b_Chauffer.enabled = false;
+            b_TBT.enabled = false;
+
+            b_Young.enabled = false;
+            b_RBF.enabled = false;
+            b_Assassinate.enabled = false;
+
+            b_Cross.enabled = true;
+            b_DefenseRests.enabled = true;
+
+            fratButtons.SetActive(false);
+            sororityButtons.SetActive(false);
+            botoxButtons.SetActive(false);
+            lawyerButtons.SetActive(true);
+        }
+        else if (CB.isSororityGirl)
+        {
+            b_Drunk.enabled = false;
+            b_Thirsty.enabled = false;
+            b_Affluenza.enabled = false;
+
+            b_CallDaddy.enabled = true;
+            b_Chauffer.enabled = true;
+            b_TBT.enabled = true;
+
+            b_Young.enabled = false;
+            b_RBF.enabled = false;
+            b_Assassinate.enabled = false;
+
+            b_Cross.enabled = false;
+            b_DefenseRests.enabled = false;
+
+            fratButtons.SetActive(false);
+            sororityButtons.SetActive(true);
+            botoxButtons.SetActive(false);
+            lawyerButtons.SetActive(false);
+        }
     }
 
     void TestInputs()

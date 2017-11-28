@@ -23,6 +23,14 @@ public class MouseInfoText : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (mGM.MI.moveToolSelected)
+        {
+            isDisplayed = true;
+        }
+        else
+        {
+            isDisplayed = false;
+        }
         MoveTextWithMouse();
         DisplayMouseText();
         CalculateMoveCost();

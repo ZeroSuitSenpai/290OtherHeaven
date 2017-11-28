@@ -11,10 +11,13 @@ public class MouseInput : MonoBehaviour
     public GameObject currentCharacter;
     public CharacterBase CB;
 
+    public bool moveToolSelected;
+
     // Use this for initialization
     void Start()
     {
         GM = gameMast.GetComponent<GameMaster>();
+        moveToolSelected = false;
     }
 
     // Update is called once per frame
@@ -25,28 +28,31 @@ public class MouseInput : MonoBehaviour
 
     void MoveToMousePoint()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (moveToolSelected)
         {
-            RaycastHit hit;
-
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
+            if (Input.GetMouseButtonDown(0))
             {
-                if (GM.MU.validMove)
+                RaycastHit hit;
+
+                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
                 {
-                    if (CB.isBotoxMom)
+                    if (GM.MU.validMove)
                     {
-                        CB.SpendAP(Mathf.RoundToInt(GM.MU.lengthSoFar * GM.CB.moveSpeedModifier * GM.currentCharacter.GetComponent<Abilities_BotoxMom>().newYearModifier));
-                        if (CB.enoughAP)
+                        if (CB.isBotoxMom)
                         {
-                            CB.navAgent.destination = hit.point;
+                            CB.SpendAP(Mathf.RoundToInt(GM.MU.lengthSoFar * GM.CB.moveSpeedModifier * GM.currentCharacter.GetComponent<Abilities_BotoxMom>().newYearModifier));
+                            if (CB.enoughAP)
+                            {
+                                CB.navAgent.destination = hit.point;
+                            }
                         }
-                    }
-                    else
-                    {
-                        CB.SpendAP(Mathf.RoundToInt(GM.MU.lengthSoFar * GM.CB.moveSpeedModifier));
-                        if (CB.enoughAP)
+                        else
                         {
-                            CB.navAgent.destination = hit.point;
+                            CB.SpendAP(Mathf.RoundToInt(GM.MU.lengthSoFar * GM.CB.moveSpeedModifier));
+                            if (CB.enoughAP)
+                            {
+                                CB.navAgent.destination = hit.point;
+                            }
                         }
                     }
                 }

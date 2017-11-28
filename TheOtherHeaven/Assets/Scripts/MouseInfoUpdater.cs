@@ -28,9 +28,12 @@ public class MouseInfoUpdater : MonoBehaviour
     {
         CheckIfValidMove();
         CalculatePathDistance();
-        OnDrawGizmosSelected();
         currentCharacter = GM.currentCharacter;
-        
+        if (GM.MI.moveToolSelected)
+        {
+            OnDrawGizmosSelected();
+        }
+
         if (GM.CB.navAgent.remainingDistance <= 0)
         {
             gameObject.transform.position = currentCharacter.transform.position;
