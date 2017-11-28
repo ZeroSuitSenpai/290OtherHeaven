@@ -63,6 +63,8 @@ public class Abilities_SororityGirl : MonoBehaviour {
         {
             pGM.GetComponent<GameMaster>().CB.moveSpeedModifier = 0.5f;
             usedChauffer = true;
+            GM2.CL.PostCombatMsg("Sorority Girl casts Chauffer.");
+            GM2.CL.PostCombatMsg("Her movement speed costs are halved until the end of the turn.");
         }
 
     }
@@ -77,6 +79,7 @@ public class Abilities_SororityGirl : MonoBehaviour {
             Vector3 dir = (Input.mousePosition - sp).normalized;
             Instantiate(callDaddyProj, this.transform.position + (1.5f * dir), Quaternion.identity);
             callDaddyProj.GetComponent<Ability_CallDaddy>().SetOwner(this.gameObject);
+            GM2.CL.PostCombatMsg("Sorority Girl casts Call Daddy.");
         }
     }
 
@@ -88,6 +91,8 @@ public class Abilities_SororityGirl : MonoBehaviour {
         {
             gameObject.transform.position = startingPos;
             pGM.GetComponent<GameMaster>().CB.navAgent.SetDestination(this.gameObject.transform.position);
+            GM2.CL.PostCombatMsg("Sorority Girl casts #TBT.");
+            GM2.CL.PostCombatMsg("Sorority Girl returns to her starting position!");
         }
     }
 

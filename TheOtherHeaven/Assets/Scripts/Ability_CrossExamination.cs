@@ -6,6 +6,7 @@ public class Ability_CrossExamination : MonoBehaviour {
 
     string enemyTag;
     float timer = 0;
+    public GameObject owner;
 
     // Use this for initialization
     void Start () {
@@ -21,10 +22,12 @@ public class Ability_CrossExamination : MonoBehaviour {
         {
             Debug.Log("ERROR: Unable to set enemy tag for DrunkAFDGAF");
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        owner = GameObject.Find("Main Camera");
+
+    }
+
+    // Update is called once per frame
+    void Update () {
         timer += Time.deltaTime;
         if (timer >= 0.25f)
         {
@@ -37,12 +40,15 @@ public class Ability_CrossExamination : MonoBehaviour {
         if (other.name.Contains("Player_") && other.tag == enemyTag)
         {
             other.GetComponent<CharacterBase>().TakeDamage(15);
-            Debug.Log("Cross Examination dealt 15 damage to " + other.gameObject.name);
+            //Debug.Log("Cross Examination dealt 15 damage to " + other.gameObject.name);
+            owner.GetComponent<CombatLog>().PostCombatMsg("Cross Examination dealt 15 damage to " + other.gameObject.name);
+
         }
         else if (other.name.Contains("Player_"))
         {
             other.GetComponent<CharacterBase>().TakeDamage(-25);
-            Debug.Log("Cross Examination healed 50 " + other.gameObject.name + " for 25 damage");
+            //Debug.Log("Cross Examination healed " + other.gameObject.name + " for 25 damage");
+            owner.GetComponent<CombatLog>().PostCombatMsg("Cross Examination healed " + other.gameObject.name + " for 25 damage");
         }
     }
 }

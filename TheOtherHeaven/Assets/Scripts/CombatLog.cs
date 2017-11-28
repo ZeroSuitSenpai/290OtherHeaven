@@ -28,14 +28,13 @@ public class CombatLog : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        PostCombatMsg("");
     }
 
     public void PostCombatMsg(string inMessage)
     {
-        txt4.text = txt3.text;
-        txt3.text = txt2.text;
-        txt2.text = txt1.text;
-        txt1.text = inMessage;
+        txt1.text = txt2.text;
+        txt2.text = txt3.text;
+        txt3.text = txt4.text;
+        txt4.text = inMessage;
     }
 }

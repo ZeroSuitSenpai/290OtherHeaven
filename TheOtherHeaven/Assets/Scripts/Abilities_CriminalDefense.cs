@@ -75,6 +75,7 @@ public class Abilities_CriminalDefense : MonoBehaviour {
             Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
             Vector3 dir = (Input.mousePosition - sp).normalized;
             Instantiate(crossProj, this.transform.position, Quaternion.identity);
+            GM2.CL.PostCombatMsg("Criminal Lawyer casts Cross Examination.");
         }
     }
 
@@ -95,6 +96,7 @@ public class Abilities_CriminalDefense : MonoBehaviour {
             Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
             Vector3 dir = (Input.mousePosition - sp).normalized;
             Instantiate(defenseProj, this.transform.position + (1.5f * dir), Quaternion.identity);
+            GM2.CL.PostCombatMsg("Criminal Lawyer casts The Defense Rests.");
         }
     }
 

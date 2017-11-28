@@ -5,9 +5,10 @@ using UnityEngine;
 public class Ability_DrunkAFDGAF : MonoBehaviour {
 
     string enemyTag;
+    public GameObject owner;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         if (this.tag == "P1")
         {
             enemyTag = "P2";
@@ -20,10 +21,12 @@ public class Ability_DrunkAFDGAF : MonoBehaviour {
         {
             Debug.Log("ERROR: Unable to set enemy tag for DrunkAFDGAF");
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        owner = GameObject.Find("Main Camera");
+
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
@@ -32,7 +35,8 @@ public class Ability_DrunkAFDGAF : MonoBehaviour {
         if (other.name.Contains("Player_") && other.tag == enemyTag)
         {
             other.GetComponent<CharacterBase>().TakeDamage(25);
-            Debug.Log("DrunkAF DGAF dealt 25 damage to " + other.gameObject.name);
+            //Debug.Log("DrunkAF DGAF dealt 25 damage to " + other.gameObject.name);
+            owner.GetComponent<CombatLog>().PostCombatMsg("DrunkAF DGAF dealt 25 damage to " + other.gameObject.name);
         }
     }
 }

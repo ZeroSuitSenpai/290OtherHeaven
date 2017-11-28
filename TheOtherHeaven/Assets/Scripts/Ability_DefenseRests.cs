@@ -6,6 +6,7 @@ public class Ability_DefenseRests: MonoBehaviour {
 
     string enemyTag;
     float timer = 0;
+    public GameObject owner;
 
     // Use this for initialization
     void Start () {
@@ -21,10 +22,12 @@ public class Ability_DefenseRests: MonoBehaviour {
         {
             Debug.Log("ERROR: Unable to set enemy tag for DrunkAFDGAF");
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        owner = GameObject.Find("Main Camera");
+
+    }
+
+    // Update is called once per frame
+    void Update () {
         timer += Time.deltaTime;
         if (timer >= 0.25f)
         {
@@ -37,7 +40,8 @@ public class Ability_DefenseRests: MonoBehaviour {
         if (other.name.Contains("Player_") && other.tag == enemyTag)
         {
             other.GetComponent<CharacterBase>().isStunned = true;
-            Debug.Log("Defense Rests stunned " + other.gameObject.name);
+            //Debug.Log("Defense Rests stunned " + other.gameObject.name);
+            owner.GetComponent<CombatLog>().PostCombatMsg("Defense Rests stunned " + other.gameObject.name);
         }
     }
 }

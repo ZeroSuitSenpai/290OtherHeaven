@@ -80,7 +80,8 @@ public class CharacterBase : MonoBehaviour
         else
         {
             enoughAP = false;
-            Debug.Log("ERROR:  Not enough AP to complete move");
+            //Debug.Log("ERROR:  Not enough AP to complete move");
+            gMast.GetComponent<CombatLog>().PostCombatMsg("Not enough AP to perform action.");
         }
     }
 
@@ -92,7 +93,9 @@ public class CharacterBase : MonoBehaviour
             if (health <= 0)
             {
                 isAlive = false;
-                Debug.Log(this.gameObject.name + "died!");
+                //Debug.Log(this.gameObject.name + "died!");
+                gMast.GetComponent<CombatLog>().PostCombatMsg(this.gameObject.name + " died!");
+
                 gameObject.GetComponent<MeshRenderer>().enabled = false;
             }
         }
@@ -104,13 +107,15 @@ public class CharacterBase : MonoBehaviour
                 if (health <= 0)
                 {
                     isAlive = false;
-                    Debug.Log(this.gameObject.name + "died!");
+                    //Debug.Log(this.gameObject.name + "died!");
+                    gMast.GetComponent<CombatLog>().PostCombatMsg(this.gameObject.name + " died!");
                     gameObject.GetComponent<MeshRenderer>().enabled = false;
                 }
             }
             else
             {
-                Debug.Log("Damage to Frat Boy prevented by affluenza");
+                //Debug.Log("Damage to Frat Boy prevented by affluenza");
+                gMast.GetComponent<CombatLog>().PostCombatMsg("Legal damages prevented by Affluenza Defense!");
             }
         }
     }
@@ -119,18 +124,27 @@ public class CharacterBase : MonoBehaviour
     {
         if (isFratBoy)
         {
+            gMast.GetComponent<CombatLog>().PostCombatMsg("");
+            gMast.GetComponent<CombatLog>().PostCombatMsg("");
+            gMast.GetComponent<CombatLog>().PostCombatMsg("Frat boy's turn!");
             GetComponent<Abilities_FratBoy>().Tick();
             HandleStun();
             TurnStartAPGain();
         }
         else if (isSororityGirl)
         {
+            gMast.GetComponent<CombatLog>().PostCombatMsg("");
+            gMast.GetComponent<CombatLog>().PostCombatMsg("");
+            gMast.GetComponent<CombatLog>().PostCombatMsg("Sorority girl's turn!");
             GetComponent<Abilities_SororityGirl>().Tick();
             HandleStun();
             TurnStartAPGain();
         }
         else if (isBotoxMom)
         {
+            gMast.GetComponent<CombatLog>().PostCombatMsg("");
+            gMast.GetComponent<CombatLog>().PostCombatMsg("");
+            gMast.GetComponent<CombatLog>().PostCombatMsg("Botox Mom's turn!");
             GetComponent<Abilities_BotoxMom>().Tick();
             HandleStun();
             TurnStartAPGain();
@@ -138,6 +152,9 @@ public class CharacterBase : MonoBehaviour
         }
         else if (isCriminalLawyer)
         {
+            gMast.GetComponent<CombatLog>().PostCombatMsg("");
+            gMast.GetComponent<CombatLog>().PostCombatMsg("");
+            gMast.GetComponent<CombatLog>().PostCombatMsg("Criminal Lawyer's turn!");
             GetComponent<Abilities_CriminalDefense>().Tick();
             HandleStun();
             TurnStartAPGain();
@@ -167,5 +184,6 @@ public class CharacterBase : MonoBehaviour
             actionPoints = 10;
         }
         Debug.Log("Current AP:  " + actionPoints);
+        gMast.GetComponent<CombatLog>().PostCombatMsg("You gain 8 AP for beginning your turn.");
     }
 }

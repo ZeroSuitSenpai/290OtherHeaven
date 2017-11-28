@@ -6,6 +6,7 @@ public class Ability_ThirstyThursday : MonoBehaviour {
 
     string enemyTag;
     float timer = 0;
+    public GameObject owner;
 
     // Use this for initialization
     void Start () {
@@ -21,10 +22,12 @@ public class Ability_ThirstyThursday : MonoBehaviour {
         {
             Debug.Log("ERROR: Unable to set enemy tag for DrunkAFDGAF");
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        owner = GameObject.Find("Main Camera");
+
+    }
+
+    // Update is called once per frame
+    void Update () {
         timer += Time.deltaTime;
         if (timer >= 0.25f)
         {
@@ -38,6 +41,7 @@ public class Ability_ThirstyThursday : MonoBehaviour {
         {
             other.GetComponent<CharacterBase>().TakeDamage(25);
             other.GetComponent<CharacterBase>().moveSpeedModifier = 1.5f;
+            owner.GetComponent<CombatLog>().PostCombatMsg("Thirsty Thursday dealt 25 damage to " + other.gameObject.name + "and slowed them!");
         }
     }
 }
