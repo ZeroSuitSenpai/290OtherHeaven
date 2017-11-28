@@ -16,11 +16,14 @@ public class GameMaster : MonoBehaviour {
     public MouseInfoUpdater MU;
     public MouseInput MI;
 
+    public CombatLog CL;
+
     [SerializeField]
     int livingCharacters;
 
 	// Use this for initialization
 	void Start () {
+        CL = GetComponent<CombatLog>();
         charIndex = 0;
         livingCharacters = 4;
         p2Turn = !p1Turn;

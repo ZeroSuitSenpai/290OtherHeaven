@@ -55,27 +55,36 @@ public class Abilities_BotoxMom : MonoBehaviour {
     //Young Again:  Botox mom refreshes her passive (new year new me)
     public void YoungAgain()
     {
-        newYearModifier = 0.25f;
+        GM2.CB.SpendAP(8);
+        if (GM2.CB.enoughAP)
+        {
+            newYearModifier = 0.25f;
+        }
     }
 
-    
     //RBF:  A long-ranged line nuke in the direction you're facing
     public void RestingBitchFace()
     {
-        RaycastHit hit;
-        Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100);
-        Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
-        Vector3 dir = (Input.mousePosition - sp).normalized;
-        Instantiate(RBFproj, this.transform.position + (this.transform.forward * 15), gameObject.transform.rotation);
+        GM2.CB.SpendAP(2);
+        if (GM2.CB.enoughAP)
+        {
+            RaycastHit hit;
+            Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100);
+            Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
+            Vector3 dir = (Input.mousePosition - sp).normalized;
+            Instantiate(RBFproj, this.transform.position + (this.transform.forward * 15), gameObject.transform.rotation);
+        }
     }
-    
-
     //Character Assassination:  Botox mom targets an enemy anywhere on the map and deals damage to them
     public void CharacterAssassination()
     {
-        RaycastHit hit;
-        Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100);
-        Instantiate(assassinationProj, hit.point, Quaternion.identity);
+        GM2.CB.SpendAP(6);
+        if (GM2.CB.enoughAP)
+        {
+            RaycastHit hit;
+            Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100);
+            Instantiate(assassinationProj, hit.point, Quaternion.identity);
+        }
     }
 
     public void Tick()

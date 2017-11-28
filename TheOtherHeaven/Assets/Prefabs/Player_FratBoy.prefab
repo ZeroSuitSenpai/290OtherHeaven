@@ -469,7 +469,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1289748569094088}
-  m_Text: Hello World
+  m_Text: AP Text
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -490,7 +490,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1830452501262818}
-  m_Text: Hello World
+  m_Text: Health
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -547,6 +547,8 @@ MonoBehaviour:
   thirstyThursdayProj: {fileID: 0}
   colorBlue: {fileID: 2100000, guid: f1fbf7befa46b1c49bf4fec210d02a33, type: 2}
   colorRed: {fileID: 2100000, guid: 8850e554583329e4492812d87bd61c5f, type: 2}
+  pGM: {fileID: 0}
+  GM2: {fileID: 0}
 --- !u!114 &114316382572347528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -598,6 +600,7 @@ MonoBehaviour:
   alreadyStunned: 0
   moveSpeedModifier: 1
   enoughAP: 0
+  gMast: {fileID: 0}
 --- !u!114 &114943644273771970
 MonoBehaviour:
   m_ObjectHideFlags: 1

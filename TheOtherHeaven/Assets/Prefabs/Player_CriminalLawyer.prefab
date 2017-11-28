@@ -386,7 +386,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063086803617982}
-  m_Text: Hello World
+  m_Text: Health
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -407,7 +407,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1151416267283330}
-  m_Text: Hello World
+  m_Text: AP Text
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -449,6 +449,7 @@ MonoBehaviour:
   team: []
   teammate: {fileID: 0}
   pGM: {fileID: 0}
+  GM2: {fileID: 0}
   P1CE: {fileID: 1380048622726436, guid: d5304fe9b787c774585cc4dc6f4c8120, type: 2}
   P2CE: {fileID: 1380048622726436, guid: 9440e2bfea6faf9428c9c7d0b4278ab8, type: 2}
   P1DR: {fileID: 1825626383393264, guid: d024cc5b6071e38409cbd0246d875c27, type: 2}
@@ -493,6 +494,7 @@ MonoBehaviour:
   alreadyStunned: 0
   moveSpeedModifier: 1
   enoughAP: 0
+  gMast: {fileID: 0}
 --- !u!114 &114885303129259616
 MonoBehaviour:
   m_ObjectHideFlags: 1

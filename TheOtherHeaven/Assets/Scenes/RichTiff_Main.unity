@@ -130,19 +130,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 114196635597852284, guid: 2a266fb028e842741bc60fb0b49a8381,
+    - target: {fileID: 114698473580300806, guid: 2a266fb028e842741bc60fb0b49a8381,
         type: 2}
-      propertyPath: gameMast
-      value: 
-      objectReference: {fileID: 1770756836}
-    - target: {fileID: 114522532680017504, guid: 2a266fb028e842741bc60fb0b49a8381,
-        type: 2}
-      propertyPath: pGM
-      value: 
-      objectReference: {fileID: 1770756836}
-    - target: {fileID: 114884754755001624, guid: 2a266fb028e842741bc60fb0b49a8381,
-        type: 2}
-      propertyPath: mainCam
+      propertyPath: gMast
       value: 
       objectReference: {fileID: 1770756836}
     - target: {fileID: 114595208537268316, guid: 2a266fb028e842741bc60fb0b49a8381,
@@ -155,6 +145,21 @@ Prefab:
       propertyPath: gMast
       value: 
       objectReference: {fileID: 1770756836}
+    - target: {fileID: 114884754755001624, guid: 2a266fb028e842741bc60fb0b49a8381,
+        type: 2}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114522532680017504, guid: 2a266fb028e842741bc60fb0b49a8381,
+        type: 2}
+      propertyPath: pGM
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114196635597852284, guid: 2a266fb028e842741bc60fb0b49a8381,
+        type: 2}
+      propertyPath: gameMast
+      value: 
+      objectReference: {fileID: 1770756836}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a266fb028e842741bc60fb0b49a8381, type: 2}
   m_IsPrefabParent: 0
@@ -163,6 +168,80 @@ GameObject:
   m_PrefabParentObject: {fileID: 1426006461144972, guid: 2a266fb028e842741bc60fb0b49a8381,
     type: 2}
   m_PrefabInternal: {fileID: 21285184}
+--- !u!1 &30788546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 30788547}
+  - component: {fileID: 30788549}
+  - component: {fileID: 30788548}
+  m_Layer: 5
+  m_Name: CombatLogBox2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &30788547
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 30788546}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1496955379}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -48.600006}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &30788548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 30788546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 1
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Combat Log Line
+--- !u!222 &30788549
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 30788546}
 --- !u!1 &129248891
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,19 +522,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114986045607405754, guid: 288595b51af3adb4fada037e96bedc33,
+    - target: {fileID: 114301236813068356, guid: 288595b51af3adb4fada037e96bedc33,
         type: 2}
-      propertyPath: gameMast
-      value: 
-      objectReference: {fileID: 1770756836}
-    - target: {fileID: 114081803422831320, guid: 288595b51af3adb4fada037e96bedc33,
-        type: 2}
-      propertyPath: pGM
-      value: 
-      objectReference: {fileID: 1770756836}
-    - target: {fileID: 114512842758853200, guid: 288595b51af3adb4fada037e96bedc33,
-        type: 2}
-      propertyPath: mainCam
+      propertyPath: gMast
       value: 
       objectReference: {fileID: 1770756836}
     - target: {fileID: 114621672865778362, guid: 288595b51af3adb4fada037e96bedc33,
@@ -466,6 +535,21 @@ Prefab:
     - target: {fileID: 114621672865778362, guid: 288595b51af3adb4fada037e96bedc33,
         type: 2}
       propertyPath: gMast
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114512842758853200, guid: 288595b51af3adb4fada037e96bedc33,
+        type: 2}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114081803422831320, guid: 288595b51af3adb4fada037e96bedc33,
+        type: 2}
+      propertyPath: pGM
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114986045607405754, guid: 288595b51af3adb4fada037e96bedc33,
+        type: 2}
+      propertyPath: gameMast
       value: 
       objectReference: {fileID: 1770756836}
     m_RemovedComponents: []
@@ -1010,6 +1094,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1487317834}
+  - {fileID: 1970950929}
+  - {fileID: 30788547}
+  - {fileID: 2068390474}
+  - {fileID: 1558998239}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1018,6 +1106,80 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1558998238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1558998239}
+  - component: {fileID: 1558998241}
+  - component: {fileID: 1558998240}
+  m_Layer: 5
+  m_Name: CombatLogBox4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1558998239
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1558998238}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1496955379}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -108.600006}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1558998240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1558998238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 1
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Combat Log Line
+--- !u!222 &1558998241
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1558998238}
 --- !u!1001 &1559290202
 Prefab:
   m_ObjectHideFlags: 0
@@ -1057,14 +1219,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 114828412474458068, guid: e4627c8bce6517e42a538ba8f16cc006,
+    - target: {fileID: 114687986927156854, guid: e4627c8bce6517e42a538ba8f16cc006,
         type: 2}
-      propertyPath: gameMast
+      propertyPath: pGM
       value: 
       objectReference: {fileID: 1770756836}
-    - target: {fileID: 114266378053212222, guid: e4627c8bce6517e42a538ba8f16cc006,
+    - target: {fileID: 114831357981911942, guid: e4627c8bce6517e42a538ba8f16cc006,
         type: 2}
-      propertyPath: mainCam
+      propertyPath: gMast
       value: 
       objectReference: {fileID: 1770756836}
     - target: {fileID: 114931056899961240, guid: e4627c8bce6517e42a538ba8f16cc006,
@@ -1075,6 +1237,16 @@ Prefab:
     - target: {fileID: 114931056899961240, guid: e4627c8bce6517e42a538ba8f16cc006,
         type: 2}
       propertyPath: gMast
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114266378053212222, guid: e4627c8bce6517e42a538ba8f16cc006,
+        type: 2}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114828412474458068, guid: e4627c8bce6517e42a538ba8f16cc006,
+        type: 2}
+      propertyPath: gameMast
       value: 
       objectReference: {fileID: 1770756836}
     m_RemovedComponents: []
@@ -1174,6 +1346,7 @@ GameObject:
   - component: {fileID: 1770756838}
   - component: {fileID: 1770756837}
   - component: {fileID: 1770756843}
+  - component: {fileID: 1770756842}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1249,6 +1422,25 @@ Transform:
   m_Father: {fileID: 381799291}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!114 &1770756842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1770756836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ffdc619649eb81468f59327dee04bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  box1: {fileID: 1970950928}
+  box2: {fileID: 30788546}
+  box3: {fileID: 2068390473}
+  box4: {fileID: 1558998238}
+  txt1: {fileID: 0}
+  txt2: {fileID: 0}
+  txt3: {fileID: 0}
+  txt4: {fileID: 0}
 --- !u!114 &1770756843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1271,6 +1463,7 @@ MonoBehaviour:
   mouseInfo: {fileID: 1435075371}
   MU: {fileID: 0}
   MI: {fileID: 0}
+  CL: {fileID: 0}
   livingCharacters: 0
 --- !u!1 &1836232197
 GameObject:
@@ -1334,6 +1527,154 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1970950928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1970950929}
+  - component: {fileID: 1970950931}
+  - component: {fileID: 1970950930}
+  m_Layer: 5
+  m_Name: CombatLogBox1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1970950929
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1970950928}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1496955379}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -18.6}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1970950930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1970950928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 1
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Combat Log Line
+--- !u!222 &1970950931
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1970950928}
+--- !u!1 &2068390473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2068390474}
+  - component: {fileID: 2068390476}
+  - component: {fileID: 2068390475}
+  m_Layer: 5
+  m_Name: CombatLogBox3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2068390474
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2068390473}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1496955379}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -78.600006}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2068390475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2068390473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 1
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Combat Log Line
+--- !u!222 &2068390476
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2068390473}
 --- !u!1001 &2074659436
 Prefab:
   m_ObjectHideFlags: 0
@@ -1373,14 +1714,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114316382572347528, guid: 1e0f2df3d844c0441b3ae6250bc6652d,
+    - target: {fileID: 114281013755731666, guid: 1e0f2df3d844c0441b3ae6250bc6652d,
         type: 2}
-      propertyPath: gameMast
+      propertyPath: pGM
       value: 
       objectReference: {fileID: 1770756836}
-    - target: {fileID: 114103656054159472, guid: 1e0f2df3d844c0441b3ae6250bc6652d,
+    - target: {fileID: 114721950011692784, guid: 1e0f2df3d844c0441b3ae6250bc6652d,
         type: 2}
-      propertyPath: mainCam
+      propertyPath: gMast
       value: 
       objectReference: {fileID: 1770756836}
     - target: {fileID: 114943644273771970, guid: 1e0f2df3d844c0441b3ae6250bc6652d,
@@ -1391,6 +1732,16 @@ Prefab:
     - target: {fileID: 114943644273771970, guid: 1e0f2df3d844c0441b3ae6250bc6652d,
         type: 2}
       propertyPath: gMast
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114103656054159472, guid: 1e0f2df3d844c0441b3ae6250bc6652d,
+        type: 2}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1770756836}
+    - target: {fileID: 114316382572347528, guid: 1e0f2df3d844c0441b3ae6250bc6652d,
+        type: 2}
+      propertyPath: gameMast
       value: 
       objectReference: {fileID: 1770756836}
     m_RemovedComponents: []

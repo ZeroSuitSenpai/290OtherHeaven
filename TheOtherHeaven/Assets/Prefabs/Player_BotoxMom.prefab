@@ -386,7 +386,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1028664399996380}
-  m_Text: Hello World
+  m_Text: AP Text
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -407,7 +407,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1807378041150824}
-  m_Text: Hello World
+  m_Text: Health
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -465,6 +465,7 @@ MonoBehaviour:
   alreadyStunned: 0
   moveSpeedModifier: 1
   enoughAP: 0
+  gMast: {fileID: 0}
 --- !u!114 &114492385652591422
 MonoBehaviour:
   m_ObjectHideFlags: 1

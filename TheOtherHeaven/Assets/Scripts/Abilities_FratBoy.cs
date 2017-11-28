@@ -15,6 +15,9 @@ public class Abilities_FratBoy : MonoBehaviour {
     public Material colorBlue;
     public Material colorRed;
 
+    public GameObject pGM;
+    public GameMaster GM2;
+
     // Use this for initialization
     void Start ()
     {
@@ -36,6 +39,8 @@ public class Abilities_FratBoy : MonoBehaviour {
         }
         DrunkHitbox = gameObject.transform.FindChild("DrunkHitbox").gameObject;
         DrunkHitbox.SetActive(false);
+
+        GM2 = pGM.GetComponent<GameMaster>();
 	}
 	
 	// Update is called once per frame
@@ -52,13 +57,20 @@ public class Abilities_FratBoy : MonoBehaviour {
     //Affluenza Defense:  Frat boy becomes immune to all damage for a turn, but cannot do anything.
     public void AffluenzaDefense()
     {
-        hasAffluenza = true;
+        GM2.CB.SpendAP(5);
+        if (GM2.CB.enoughAP)
+        {
+            hasAffluenza = true;
+        }
     }
-
     //Thirsty Thursday:  Frat boy slams a keg on the ground, damaging and silencing all around him
     public void ThirstyThursday()
     {
-        Instantiate(thirstyThursdayProj, this.transform.position, Quaternion.identity);
+        GM2.CB.SpendAP(4);
+        if (GM2.CB.enoughAP)
+        {
+            Instantiate(thirstyThursdayProj, this.transform.position, Quaternion.identity);
+        }
     }
 
     public void Tick()

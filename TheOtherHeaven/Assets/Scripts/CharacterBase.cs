@@ -25,6 +25,7 @@ public class CharacterBase : MonoBehaviour
 
     public bool enoughAP;
 
+    public GameObject gMast;
 
     // Use this for initialization
     void Start ()
@@ -69,6 +70,7 @@ public class CharacterBase : MonoBehaviour
 
     public void SpendAP(int amtToSpend)
     {
+        enoughAP = false;
         if (actionPoints - amtToSpend >= 0)
         {
             enoughAP = true;
@@ -80,7 +82,6 @@ public class CharacterBase : MonoBehaviour
             enoughAP = false;
             Debug.Log("ERROR:  Not enough AP to complete move");
         }
-        Debug.Log("Current AP:  " + actionPoints);
     }
 
     public void TakeDamage(int amtToTake)

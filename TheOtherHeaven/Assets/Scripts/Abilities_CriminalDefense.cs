@@ -7,6 +7,7 @@ public class Abilities_CriminalDefense : MonoBehaviour {
     public GameObject[] team;
     public GameObject teammate;
     public GameObject pGM;
+    public GameMaster GM2;
 
     public GameObject P1CE;
     public GameObject P2CE;
@@ -56,6 +57,8 @@ public class Abilities_CriminalDefense : MonoBehaviour {
         {
             Debug.Log("ERROR:  Unable to determine tag for criminal defense.");
         }
+
+        GM2 = pGM.GetComponent<GameMaster>();
     }
 	
 	// Update is called once per frame
@@ -66,9 +69,13 @@ public class Abilities_CriminalDefense : MonoBehaviour {
     //Basic attack:  Heals allies and damages enemies in an area
     public void CrossExamination()
     {
-        Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
-        Vector3 dir = (Input.mousePosition - sp).normalized;
-        Instantiate(crossProj, this.transform.position, Quaternion.identity);
+        GM2.CB.SpendAP(4);
+        if (GM2.CB.enoughAP)
+        {
+            Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
+            Vector3 dir = (Input.mousePosition - sp).normalized;
+            Instantiate(crossProj, this.transform.position, Quaternion.identity);
+        }
     }
 
     /*
@@ -82,18 +89,19 @@ public class Abilities_CriminalDefense : MonoBehaviour {
     //The defense rests:  Stuns target enemy for one turn
     public void TheDefenseRests()
     {
-        Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
-        Vector3 dir = (Input.mousePosition - sp).normalized;
-        Instantiate(defenseProj, this.transform.position + (1.5f * dir), Quaternion.identity);
+        GM2.CB.SpendAP(2);
+        if (GM2.CB.enoughAP)
+        {
+            Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
+            Vector3 dir = (Input.mousePosition - sp).normalized;
+            Instantiate(defenseProj, this.transform.position + (1.5f * dir), Quaternion.identity);
+        }
     }
 
     //Not Guilty:  Revives a dead teammate
     public void NotGuilty()
     {
-        Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
-        Vector3 dir = (Input.mousePosition - sp).normalized;
-        Instantiate(teammate, this.transform.position + (3.0f * dir), Quaternion.identity);
-        pGM.GetComponent<GameMaster>().cList.Add(teammate);
+        Debug.Log("THIS MOVE HAS BEEN REMOVED/CANCELLED");
     }
 
     public void Tick()
