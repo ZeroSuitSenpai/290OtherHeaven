@@ -38,9 +38,9 @@ public class Ability_CharacterAssassination : MonoBehaviour {
     {
         if (other.name.Contains("Player_") && other.tag == enemyTag)
         {
-            other.GetComponent<CharacterBase>().TakeDamage(50);
+            other.GetComponent<CharacterBase>().TakeDamage(45);
             //Debug.Log("Character assassination dealt 50 damage to " + other.gameObject.name);
-            owner.GetComponent<CombatLog>().PostCombatMsg("Character assassination dealt 50 damage to " + other.gameObject.name);
+            owner.GetComponent<CombatLog>().PostCombatMsg("Character assassination dealt 45 damage to " + other.gameObject.name);
         }
     }
 }

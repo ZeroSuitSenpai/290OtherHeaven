@@ -44,7 +44,6 @@ public class GameMaster : MonoBehaviour
 
     public Button b_MoveButton;
 
-
     // Use this for initialization
     void Start()
     {

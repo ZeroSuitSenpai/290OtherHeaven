@@ -17,7 +17,7 @@ public class MouseInput : MonoBehaviour
     void Start()
     {
         GM = gameMast.GetComponent<GameMaster>();
-        moveToolSelected = false;
+        moveToolSelected = true;
     }
 
     // Update is called once per frame
@@ -28,31 +28,28 @@ public class MouseInput : MonoBehaviour
 
     void MoveToMousePoint()
     {
-        if (moveToolSelected)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                RaycastHit hit;
+            RaycastHit hit;
 
-                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
+            {
+                if (GM.MU.validMove)
                 {
-                    if (GM.MU.validMove)
+                    if (CB.isBotoxMom)
                     {
-                        if (CB.isBotoxMom)
+                        CB.SpendAP(Mathf.RoundToInt(GM.MU.lengthSoFar * GM.CB.moveSpeedModifier * GM.currentCharacter.GetComponent<Abilities_BotoxMom>().newYearModifier));
+                        if (CB.enoughAP)
                         {
-                            CB.SpendAP(Mathf.RoundToInt(GM.MU.lengthSoFar * GM.CB.moveSpeedModifier * GM.currentCharacter.GetComponent<Abilities_BotoxMom>().newYearModifier));
-                            if (CB.enoughAP)
-                            {
-                                CB.navAgent.destination = hit.point;
-                            }
+                            CB.navAgent.destination = hit.point;
                         }
-                        else
+                    }
+                    else
+                    {
+                        CB.SpendAP(Mathf.RoundToInt(GM.MU.lengthSoFar * GM.CB.moveSpeedModifier));
+                        if (CB.enoughAP)
                         {
-                            CB.SpendAP(Mathf.RoundToInt(GM.MU.lengthSoFar * GM.CB.moveSpeedModifier));
-                            if (CB.enoughAP)
-                            {
-                                CB.navAgent.destination = hit.point;
-                            }
+                            CB.navAgent.destination = hit.point;
                         }
                     }
                 }
@@ -60,4 +57,5 @@ public class MouseInput : MonoBehaviour
         }
     }
 }
+
 

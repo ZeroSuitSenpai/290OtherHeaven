@@ -101,7 +101,7 @@ public class Abilities_BotoxMom : MonoBehaviour {
     //Character Assassination:  Botox mom targets an enemy anywhere on the map and deals damage to them
     public void CharacterAssassination()
     {
-        GM2.CB.SpendAP(6);
+        GM2.CB.SpendAP(9);
         if (GM2.CB.enoughAP)
         {
             RaycastHit hit;
