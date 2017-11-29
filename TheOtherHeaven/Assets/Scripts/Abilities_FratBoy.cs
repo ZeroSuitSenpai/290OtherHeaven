@@ -61,8 +61,8 @@ public class Abilities_FratBoy : MonoBehaviour {
         if (GM2.CB.enoughAP)
         {
             hasAffluenza = true;
-            GM2.CL.PostCombatMsg("Frat Boy calls his lawyers, gaining Affluenza Defense for 1 turn!");
-            GM2.CL.PostCombatMsg("Frat Boy is immune from damage until the start of his next turn.");
+            GM2.CL.PostCombatMsg("Chad calls his lawyers, gaining Affluenza Defense for 1 turn!");
+            GM2.CL.PostCombatMsg("Chad is immune from damage until the start of his next turn.");
         }
     }
     //Thirsty Thursday:  Frat boy slams a keg on the ground, damaging and silencing all around him
@@ -72,7 +72,7 @@ public class Abilities_FratBoy : MonoBehaviour {
         if (GM2.CB.enoughAP)
         {
             Instantiate(thirstyThursdayProj, this.transform.position, Quaternion.identity);
-            GM2.CL.PostCombatMsg("Frat Boy casts Thirsty Thursday!");
+            GM2.CL.PostCombatMsg("Chad casts Thirsty Thursday!");
         }
     }
 
@@ -81,7 +81,7 @@ public class Abilities_FratBoy : MonoBehaviour {
         if (hasAffluenza)
         {
            hasAffluenza = false;
-            GM2.CL.PostCombatMsg("Frat Boy's Affluenza Defense buff has expired!");
+            GM2.CL.PostCombatMsg("Chad's Affluenza Defense buff has expired!");
         }
         DrunkHitbox.SetActive(true);
     }

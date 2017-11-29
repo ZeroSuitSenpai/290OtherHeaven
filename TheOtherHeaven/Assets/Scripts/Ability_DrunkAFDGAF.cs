@@ -36,7 +36,7 @@ public class Ability_DrunkAFDGAF : MonoBehaviour {
         {
             other.GetComponent<CharacterBase>().TakeDamage(25);
             //Debug.Log("DrunkAF DGAF dealt 25 damage to " + other.gameObject.name);
-            owner.GetComponent<CombatLog>().PostCombatMsg("DrunkAF DGAF dealt 25 damage to " + other.gameObject.name);
+            owner.GetComponent<CombatLog>().PostCombatMsg("DrunkAF DGAF dealt 25 damage to " + other.gameObject.GetComponent<CharacterBase>().myName);
         }
     }
 }

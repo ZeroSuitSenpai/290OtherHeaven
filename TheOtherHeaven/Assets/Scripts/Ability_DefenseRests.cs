@@ -41,7 +41,7 @@ public class Ability_DefenseRests: MonoBehaviour {
         {
             other.GetComponent<CharacterBase>().isStunned = true;
             //Debug.Log("Defense Rests stunned " + other.gameObject.name);
-            owner.GetComponent<CombatLog>().PostCombatMsg("Defense Rests stunned " + other.gameObject.name);
+            owner.GetComponent<CombatLog>().PostCombatMsg("Defense Rests stunned " + other.gameObject.GetComponent<CharacterBase>().myName);
         }
     }
 }

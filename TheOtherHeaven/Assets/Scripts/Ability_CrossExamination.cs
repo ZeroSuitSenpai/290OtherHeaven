@@ -41,14 +41,14 @@ public class Ability_CrossExamination : MonoBehaviour {
         {
             other.GetComponent<CharacterBase>().TakeDamage(15);
             //Debug.Log("Cross Examination dealt 15 damage to " + other.gameObject.name);
-            owner.GetComponent<CombatLog>().PostCombatMsg("Cross Examination dealt 15 damage to " + other.gameObject.name);
+            owner.GetComponent<CombatLog>().PostCombatMsg("Cross Examination dealt 15 damage to " + other.gameObject.GetComponent<CharacterBase>().myName);
 
         }
         else if (other.name.Contains("Player_"))
         {
             other.GetComponent<CharacterBase>().TakeDamage(-25);
             //Debug.Log("Cross Examination healed " + other.gameObject.name + " for 25 damage");
-            owner.GetComponent<CombatLog>().PostCombatMsg("Cross Examination healed " + other.gameObject.name + " for 25 damage");
+            owner.GetComponent<CombatLog>().PostCombatMsg("Cross Examination healed " + other.gameObject.GetComponent<CharacterBase>().myName + " for 25 damage");
         }
     }
 }

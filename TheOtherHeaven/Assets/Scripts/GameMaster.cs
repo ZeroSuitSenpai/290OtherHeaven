@@ -220,8 +220,8 @@ public class GameMaster : MonoBehaviour
         {
             if (CB.isBotoxMom)
             {
-                CB.GetComponent<Abilities_BotoxMom>().RestingBitchFace();
-                Debug.Log("Botox Mom casts Resting Bitch Face");
+                CB.GetComponent<Abilities_BotoxMom>().YoungAgain();
+                Debug.Log("Botox Mom casts Young Again");
             }
             else if (CB.isCriminalLawyer)
             {
@@ -248,8 +248,8 @@ public class GameMaster : MonoBehaviour
         {
             if (CB.isBotoxMom)
             {
-                CB.GetComponent<Abilities_BotoxMom>().YoungAgain();
-                Debug.Log("Botox Mom casts Young Again");
+                CB.GetComponent<Abilities_BotoxMom>().RestingBitchFace();
+                Debug.Log("Botox Mom casts RBF");
             }
             else if (CB.isCriminalLawyer)
             {

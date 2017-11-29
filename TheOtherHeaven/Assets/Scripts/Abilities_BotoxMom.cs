@@ -79,8 +79,8 @@ public class Abilities_BotoxMom : MonoBehaviour {
         if (GM2.CB.enoughAP)
         {
             newYearModifier = 0.25f;
-            GM2.CL.PostCombatMsg("After a quick surgery Botox Mom feels young again!");
-            GM2.CL.PostCombatMsg("Botox Mom's original movement speed is restored.");
+            GM2.CL.PostCombatMsg("After a quick surgery, Claudia feels young again!");
+            GM2.CL.PostCombatMsg("Claudia's original movement speed is restored.");
         }
     }
 
@@ -95,7 +95,7 @@ public class Abilities_BotoxMom : MonoBehaviour {
             Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
             Vector3 dir = (Input.mousePosition - sp).normalized;
             Instantiate(RBFproj, this.transform.position + (this.transform.forward * 15), gameObject.transform.rotation);
-            GM2.CL.PostCombatMsg("Botox Mom casts Resting Bitch Face.");
+            GM2.CL.PostCombatMsg("Claudia casts Resting Bitch Face.");
         }
     }
     //Character Assassination:  Botox mom targets an enemy anywhere on the map and deals damage to them
@@ -107,7 +107,7 @@ public class Abilities_BotoxMom : MonoBehaviour {
             RaycastHit hit;
             Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100);
             Instantiate(assassinationProj, hit.point, Quaternion.identity);
-            GM2.CL.PostCombatMsg("Botox Mom spreads rumors about her opponents!");
+            GM2.CL.PostCombatMsg("Claudia spreads rumors about her opponents!");
         }
     }
 

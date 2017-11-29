@@ -41,7 +41,7 @@ public class Ability_ThirstyThursday : MonoBehaviour {
         {
             other.GetComponent<CharacterBase>().TakeDamage(25);
             other.GetComponent<CharacterBase>().moveSpeedModifier = 1.5f;
-            owner.GetComponent<CombatLog>().PostCombatMsg("Thirsty Thursday dealt 25 damage to " + other.gameObject.name + "and slowed them!");
+            owner.GetComponent<CombatLog>().PostCombatMsg("Thirsty Thursday dealt 25 damage to " + other.gameObject.GetComponent<CharacterBase>().myName + "and slowed them!");
         }
     }
 }

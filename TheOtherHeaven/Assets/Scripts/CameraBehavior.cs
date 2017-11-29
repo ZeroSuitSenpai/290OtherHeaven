@@ -23,19 +23,20 @@ public class CameraBehavior : MonoBehaviour {
         //Floats for camera movement
         float horizontal = Input.GetAxis("Horizontal") * horizSpeed * Time.deltaTime;
         float vertical = Input.GetAxis("Vertical") * vertSpeed * Time.deltaTime;
-        float rotation = Input.GetAxis("Rotation");
+        //float rotation = Input.GetAxis("Rotation");
 
         //Translate the camera based on the floats specified above
         transform.Translate(Vector3.forward * vertical);
         transform.Translate(Vector3.right * horizontal);
 
         //If there is movement
+        /*
         if (rotation != 0)
         {
             //Rotate the camera based on the above float
             transform.Rotate(Vector3.up, rotation * camRotSpeed * Time.deltaTime, Space.World);
         }
-
+        */
         //Raycast to determine if the camera will move through an object
         RaycastHit hit;
         if (Physics.Raycast(transform.position, -transform.up, out hit, 100))

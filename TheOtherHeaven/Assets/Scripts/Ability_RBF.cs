@@ -39,9 +39,9 @@ public class Ability_RBF: MonoBehaviour {
     {
         if (other.name.Contains("Player_") && other.tag == enemyTag)
         {
-            other.GetComponent<CharacterBase>().TakeDamage(15);
+            other.GetComponent<CharacterBase>().TakeDamage(10);
             //Debug.Log("Resting Bitch Face dealt 15 damage to " + other.gameObject.name);
-            owner.GetComponent<CombatLog>().PostCombatMsg("Resting Bitch Face dealt 15 damage to " + other.gameObject.name);
+            owner.GetComponent<CombatLog>().PostCombatMsg("Resting Bitch Face dealt 10 damage to " + other.gameObject.GetComponent<CharacterBase>().myName);
         }
     }
 }

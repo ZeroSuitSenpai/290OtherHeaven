@@ -40,7 +40,7 @@ public class Ability_CharacterAssassination : MonoBehaviour {
         {
             other.GetComponent<CharacterBase>().TakeDamage(45);
             //Debug.Log("Character assassination dealt 50 damage to " + other.gameObject.name);
-            owner.GetComponent<CombatLog>().PostCombatMsg("Character assassination dealt 45 damage to " + other.gameObject.name);
+            owner.GetComponent<CombatLog>().PostCombatMsg("Character assassination dealt 45 damage to " + other.gameObject.GetComponent<CharacterBase>().myName);
         }
     }
 }

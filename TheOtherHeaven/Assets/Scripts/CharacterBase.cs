@@ -27,6 +27,8 @@ public class CharacterBase : MonoBehaviour
 
     public GameObject gMast;
 
+    public string myName;
+
     // Use this for initialization
     void Start ()
     {
@@ -39,18 +41,22 @@ public class CharacterBase : MonoBehaviour
         if (GetComponent<Abilities_FratBoy>())
         {
             isFratBoy = true;
+            myName = "Chad";
         }
         else if (GetComponent<Abilities_SororityGirl>())
         {
             isSororityGirl = true;
+            myName = "Tiffany";
         }
         else if (GetComponent<Abilities_CriminalDefense>())
         {
             isCriminalLawyer = true;
+            myName = "Mr. Manchester";
         }
         else if (GetComponent<Abilities_BotoxMom>())
         {
             isBotoxMom = true;
+            myName = "Claudia";
         }
         else if (gameObject.name == "Player_TestDummy")
         {
@@ -94,7 +100,7 @@ public class CharacterBase : MonoBehaviour
             {
                 isAlive = false;
                 //Debug.Log(this.gameObject.name + "died!");
-                gMast.GetComponent<CombatLog>().PostCombatMsg(this.gameObject.name + " died!");
+                gMast.GetComponent<CombatLog>().PostCombatMsg(myName + " died!");
 
                 gameObject.GetComponent<MeshRenderer>().enabled = false;
             }
@@ -108,14 +114,14 @@ public class CharacterBase : MonoBehaviour
                 {
                     isAlive = false;
                     //Debug.Log(this.gameObject.name + "died!");
-                    gMast.GetComponent<CombatLog>().PostCombatMsg(this.gameObject.name + " died!");
+                    gMast.GetComponent<CombatLog>().PostCombatMsg(myName + " died!");
                     gameObject.GetComponent<MeshRenderer>().enabled = false;
                 }
             }
             else
             {
                 //Debug.Log("Damage to Frat Boy prevented by affluenza");
-                gMast.GetComponent<CombatLog>().PostCombatMsg("Legal damages prevented by Affluenza Defense!");
+                gMast.GetComponent<CombatLog>().PostCombatMsg("Legal damages to Chad prevented by Affluenza Defense!");
             }
         }
     }
@@ -126,7 +132,7 @@ public class CharacterBase : MonoBehaviour
         {
             gMast.GetComponent<CombatLog>().PostCombatMsg("");
             gMast.GetComponent<CombatLog>().PostCombatMsg("");
-            gMast.GetComponent<CombatLog>().PostCombatMsg("Frat boy's turn!");
+            gMast.GetComponent<CombatLog>().PostCombatMsg("Chad's turn!");
             GetComponent<Abilities_FratBoy>().Tick();
             HandleStun();
             TurnStartAPGain();
@@ -135,7 +141,7 @@ public class CharacterBase : MonoBehaviour
         {
             gMast.GetComponent<CombatLog>().PostCombatMsg("");
             gMast.GetComponent<CombatLog>().PostCombatMsg("");
-            gMast.GetComponent<CombatLog>().PostCombatMsg("Sorority girl's turn!");
+            gMast.GetComponent<CombatLog>().PostCombatMsg("Tiffany's turn!");
             GetComponent<Abilities_SororityGirl>().Tick();
             HandleStun();
             TurnStartAPGain();
@@ -144,7 +150,7 @@ public class CharacterBase : MonoBehaviour
         {
             gMast.GetComponent<CombatLog>().PostCombatMsg("");
             gMast.GetComponent<CombatLog>().PostCombatMsg("");
-            gMast.GetComponent<CombatLog>().PostCombatMsg("Botox Mom's turn!");
+            gMast.GetComponent<CombatLog>().PostCombatMsg("Claudia's turn!");
             GetComponent<Abilities_BotoxMom>().Tick();
             HandleStun();
             TurnStartAPGain();
@@ -154,7 +160,7 @@ public class CharacterBase : MonoBehaviour
         {
             gMast.GetComponent<CombatLog>().PostCombatMsg("");
             gMast.GetComponent<CombatLog>().PostCombatMsg("");
-            gMast.GetComponent<CombatLog>().PostCombatMsg("Criminal Lawyer's turn!");
+            gMast.GetComponent<CombatLog>().PostCombatMsg("Mr. Manchester's turn!");
             GetComponent<Abilities_CriminalDefense>().Tick();
             HandleStun();
             TurnStartAPGain();

@@ -41,7 +41,7 @@ public class Ability_CallDaddy : MonoBehaviour {
             other.GetComponent<CharacterBase>().TakeDamage(Mathf.RoundToInt(35 * owner.GetComponent<GameMaster>().currentCharacter.GetComponent<Abilities_SororityGirl>().fashionModifier));
             other.GetComponent<CharacterBase>().moveSpeedModifier = 1.5f;
             //Debug.Log("CallDaddy dealt " + Mathf.RoundToInt(35 * owner.GetComponent<GameMaster>().currentCharacter.GetComponent<Abilities_SororityGirl>().fashionModifier) +  " damage to " + other.gameObject.name);
-            owner.GetComponent<CombatLog>().PostCombatMsg("Call Daddy deals " + Mathf.RoundToInt(35 * owner.GetComponent<GameMaster>().currentCharacter.GetComponent<Abilities_SororityGirl>().fashionModifier) + " damage to " + other.gameObject.name);
+            owner.GetComponent<CombatLog>().PostCombatMsg("Call Daddy deals " + Mathf.RoundToInt(35 * owner.GetComponent<GameMaster>().currentCharacter.GetComponent<Abilities_SororityGirl>().fashionModifier) + " damage to " + other.gameObject.GetComponent<CharacterBase>().myName);
         }
     }
 
